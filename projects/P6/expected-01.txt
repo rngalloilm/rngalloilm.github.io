@@ -1,4 +1,0 @@
-cmd> size
-0
-
-cmd> quit
