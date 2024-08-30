@@ -2,10 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Define your projects here with their files
     const projects = [
-
-        // Java Projects
-        
-
         // C Projects
         {
             name: "C - P2: List Formatting",
@@ -127,15 +123,26 @@ document.addEventListener('DOMContentLoaded', function () {
             const fileBtn = document.createElement('button');
             fileBtn.classList.add('dropbtn');
             fileBtn.innerText = file.name;
+
+            let isContentVisible = false;
+            let codeBlock;
+
             fileBtn.addEventListener('click', () => {
-                fetch(file.path)
-                    .then(response => response.text())
-                    .then(data => {
-                        const codeBlock = document.createElement('pre');
-                        codeBlock.innerText = data;
-                        dropdownContent.appendChild(codeBlock);
-                    });
+                if (!isContentVisible) {
+                    fetch(file.path)
+                        .then(response => response.text())
+                        .then(data => {
+                            codeBlock = document.createElement('pre');
+                            codeBlock.innerText = data;
+                            dropdownContent.appendChild(codeBlock);
+                            isContentVisible = true;
+                        });
+                } else {
+                    dropdownContent.removeChild(codeBlock);
+                    isContentVisible = false;
+                }
             });
+
             dropdownContent.appendChild(fileBtn);
         });
 
