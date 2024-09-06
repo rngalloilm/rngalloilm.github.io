@@ -118,8 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const dropdownContent = document.createElement('div');
         dropdownContent.classList.add('dropdown-content');
+        dropdownContent.style.height = '0px'; // Initially hidden
 
         project.files.forEach(file => {
+            const fileDiv = document.createElement('div');
             const fileBtn = document.createElement('button');
             fileBtn.classList.add('dropbtn');
             fileBtn.innerText = file.name;
@@ -134,20 +136,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         .then(data => {
                             codeBlock = document.createElement('pre');
                             codeBlock.innerText = data;
-                            dropdownContent.appendChild(codeBlock);
+                            fileDiv.appendChild(codeBlock);
                             isContentVisible = true;
+
+                            // Ensure the dropdown height grows after adding content
+                            dropdownContent.style.height = dropdownContent.scrollHeight + 'px';
                         });
                 } else {
-                    dropdownContent.removeChild(codeBlock);
+                    fileDiv.removeChild(codeBlock);
                     isContentVisible = false;
+
+                    // Force height recalculation after removing content
+                    dropdownContent.style.height = 'auto'; // Set height to auto for proper calculation
+                    setTimeout(() => {
+                        dropdownContent.style.height = dropdownContent.scrollHeight + 'px'; // Set exact height after removal
+                    }, 0); // No delay is needed, recalculate immediately
                 }
             });
 
-            dropdownContent.appendChild(fileBtn);
+            fileDiv.appendChild(fileBtn);
+            dropdownContent.appendChild(fileDiv);
         });
 
         projectBtn.addEventListener('click', () => {
-            dropdownContent.classList.toggle('show');
+            if (dropdownContent.classList.contains('show')) {
+                dropdownContent.classList.remove('show');
+                dropdownContent.style.height = '0px'; // Collapse the drop-down
+            } else {
+                dropdownContent.classList.add('show');
+                dropdownContent.style.height = dropdownContent.scrollHeight + 'px'; // Expand the drop-down
+            }
         });
 
         projectDiv.appendChild(dropdownContent);
