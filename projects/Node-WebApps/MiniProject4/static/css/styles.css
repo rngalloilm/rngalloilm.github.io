@@ -1,0 +1,176 @@
+/* General Styles */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #990000; /* Red */
+  color: white;
+  padding: 1em;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Navigation */
+nav {
+  background-color: #990000; /* Red */
+  padding: 1em;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: #427E93; /* Blue */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #35677d; /* Darker Blue */
+}
+
+/* Buttons */
+#logoutButton,
+#howlButton,
+#followButton {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#logoutButton {
+  background-color: #427E93; /* Blue */
+}
+
+#logoutButton:hover {
+  background-color: #35677d; /* Darker Blue */
+}
+
+#howlButton,
+#followButton {
+  background-color: #990000; /* Red */
+}
+
+#howlButton:hover,
+#followButton:hover {
+  background-color: #7a0000; /* Darker Red */
+}
+
+/* Profile Page */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-header p {
+  margin: 0;
+  color: #666;
+}
+
+/* Followed Users List */
+#followedUsersList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#followedUsersList li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#followedUsersList li:last-child {
+  border-bottom: none;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 1.5em;
+}
+
+/* Utility Classes */
+.red {
+  background-color: #990000; /* Red */
+  color: white;
+}
+
+.blue {
+  background-color: #427E93; /* Blue */
+  color: white;
+}
+
+/* Flex Utilities */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+/* Margin and Padding Utilities */
+.mt-4 {
+  margin-top: 1.5em;
+}
+
+.mb-4 {
+  margin-bottom: 1.5em;
+}
+
+.p-3 {
+  padding: 1em;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #666;
+}

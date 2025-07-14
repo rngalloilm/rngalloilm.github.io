@@ -1,0 +1,27 @@
+{
+  "name": "rngalloilm.github.io",
+  "version": "1.0.0",
+  "description": "Potpourri Portfolio",
+  "main": "script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon -L script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rngalloilm/rngalloilm.github.io.git"
+  },
+  "author": "Nick Gallo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rngalloilm/rngalloilm.github.io/issues"
+  },
+  "homepage": "https://github.com/rngalloilm/rngalloilm.github.io#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
