@@ -1,4 +1,0 @@
-! Test Group
-# Test Category,0
-* Test Ticket,active
-Test description.

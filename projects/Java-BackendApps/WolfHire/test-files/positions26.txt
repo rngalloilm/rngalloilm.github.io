@@ -1,2 +1,0 @@
-# CSC 216 PTF,12,15
-* 2,Inactive,Carol,Schmidt,cschmid,,Completed
