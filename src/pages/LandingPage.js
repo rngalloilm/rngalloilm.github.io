@@ -183,7 +183,7 @@ function LandingPage() {
 
     return (
         <main className="landing">
-            <h1>CSC Coding Projects</h1>
+            <h1 className="landing-title">CSC Coding Projects</h1>
             <div id="projects">
                 {/* Project buttons and code will be injected here by the useEffect hook */}
             </div>
