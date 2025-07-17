@@ -1,4 +1,0 @@
-set 4 20
-get 4
-get 5
-quit
