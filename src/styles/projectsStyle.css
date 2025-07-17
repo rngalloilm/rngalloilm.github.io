@@ -1,21 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.landing {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.landing-title {
-  margin-bottom: 100px;
+.projects-title {
+  margin-bottom: 25px;
 }
 
 
-
+/* 
 .login-main {
   background-color: #E9E9DD;
   width: 100%;
@@ -93,7 +81,6 @@
   cursor: pointer;
 }
 
-/* Larger screens adjustments */
 @media screen and (min-width: 768px) {
   .header {
     font-size: 2rem;
@@ -102,4 +89,4 @@
     width: 30%;
     max-width: 400px;
   }
-}
+} */

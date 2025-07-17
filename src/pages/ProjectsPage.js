@@ -1,113 +1,12 @@
 import React, { useEffect } from 'react';
-import '../styles/landingStyle.css';
+import '../styles/projectsStyle.css';
 import '../styles/style.css';
+import projects from '../script/projectFiles.json';
 
-function LandingPage() {
+function ProjectsPage() {
     // useEffect runs after the component mounts, similar to DOMContentLoaded
     useEffect(() => {
-        const projects = [
-            // C Projects
-            {
-                name: "C - P2: List Formatting",
-                files: [
-                    {
-                        name: "formatter.c",
-                        path: "projects/P2/formatter.c"
-                    },
-                    {
-                        name: "date.c",
-                        path: "projects/P2/date.c"
-                    },
-                    {
-                        name: "date.h",
-                        path: "projects/P2/date.h"
-                    },
-                    {
-                        name: "name.c",
-                        path: "projects/P2/name.c"
-                    },
-                    {
-                        name: "name.h",
-                        path: "projects/P2/name.h"
-                    },
-                    {
-                        name: "ssn.c",
-                        path: "projects/P2/ssn.c"
-                    },
-                    {
-                        name: "ssn.h",
-                        path: "projects/P2/ssn.h"
-                    },
-                    {
-                        name: "util.c",
-                        path: "projects/P2/util.c"
-                    },
-                    {
-                        name: "util.h",
-                        path: "projects/P2/util.h"
-                    }
-                ]
-            },
-            {
-                name: "C - P3: Stocks",
-                files: [
-                    {
-                        name: "trader.c",
-                        path: "projects/P3/trader.c"
-                    },
-                    {
-                        name: "transaction.c",
-                        path: "projects/P3/transaction.c"
-                    },
-                    {
-                        name: "transaction.h",
-                        path: "projects/P3/transaction.h"
-                    },
-                    {
-                        name: "account.c",
-                        path: "projects/P3/account.c"
-                    },
-                    {
-                        name: "account.h",
-                        path: "projects/P3/account.h"
-                    },
-                    {
-                        name: "util.c",
-                        path: "projects/P3/util.c"
-                    },
-                    {
-                        name: "util.h",
-                        path: "projects/P3/util.h"
-                    }
-                ]
-            },
-            {
-                name: "C - P4: Trip",
-                files: [
-                    {
-                        name: "parks.c",
-                        path: "projects/P4/parks.c"
-                    },
-                    {
-                        name: "catalog.c",
-                        path: "projects/P4/catalog.c"
-                    },
-                    {
-                        name: "catalog.h",
-                        path: "projects/P4/catalog.h"
-                    }
-                ]
-            },
-            {
-                name: "C - HW3.2: Max Palindrome",
-                files: [
-                    {
-                        name: "maxpalindrome-thread.c",
-                        path: "projects/HW3.2/maxpalindrome-thread.c"
-                    }
-                ]
-            }
-        ];
+        
 
         const projectsContainer = document.getElementById('projects');
         if (!projectsContainer) return; // Guard clause
@@ -182,8 +81,8 @@ function LandingPage() {
     }, []); // The empty array [] means this effect runs only once
 
     return (
-        <main className="landing">
-            <h1 className="landing-title">CSC Coding Projects</h1>
+        <main className="projects">
+            <h1 className="projects-title">CSC Coding Projects</h1>
             <div id="projects">
                 {/* Project buttons and code will be injected here by the useEffect hook */}
             </div>
@@ -191,4 +90,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default ProjectsPage;
