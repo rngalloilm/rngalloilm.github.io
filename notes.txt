@@ -1,0 +1,3 @@
+npm run build
+
+and then push, the build is in the docs folder and build folder (git ignored).

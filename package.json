@@ -1,7 +1,7 @@
 {
   "name": "rngalloilm.github.io",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "Potpourri Portfolio",
   "repository": {
     "type": "git",
