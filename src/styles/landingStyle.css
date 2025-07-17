@@ -7,8 +7,11 @@
 .landing {
   margin: 0;
   padding: 0;
-  padding-bottom: 100px;
   box-sizing: border-box;
+}
+
+.landing-title {
+  padding-bottom: 100px;
 }
 
 
