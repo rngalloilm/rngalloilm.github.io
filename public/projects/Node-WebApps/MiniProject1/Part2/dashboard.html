@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSC 342 Mini Project 1 Dashboard</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Start Sidebar -->
+  <aside class="sidebar">
+    <!-- App Logo -->
+    <div class="sidebar-logo">
+      <a href="#">
+        <img src="./images/logo.svg" alt="logo">
+      </a>
+      <p>NCSU - CSC 342</p>
+    </div>
+    <!-- End App Logo section -->
+
+    <div class="sidebar-content">
+      <!-- User Account -->
+      <div class="user-account">
+        <img src="./images/face.jpg" alt="logo">
+        <div class="user-info">
+          <p>Stu Dent</p>
+          <p>stu.dent@ncsu.edu</p>
+        </div>
+      </div>
+      <!-- End User Account -->
+
+      <!-- links -->
+      <nav class="sidebar-nav">
+        <div>
+          <a href="#">
+            Dashboard
+          </a>
+        </div>
+
+        <div>
+          <a href="#">
+            Forms
+          </a>
+        </div>
+
+        <div class="ui-features">
+          <a href="#">
+            UI Features
+          </a>
+          <!-- Sublinks under UI Features -->
+          <div class="sub-nav">
+            <nav>
+              <div>
+                <a href="#">
+                  Buttons
+                </a>
+              </div>
+              <div>
+                <a href="#">
+                  Typography
+                </a>
+              </div>
+            </nav>
+          </div>
+          <!-- end sublinks under UI Features -->
+        </div>
+
+        <div>
+          <a href="#">
+            Tables
+          </a>
+        </div>
+
+        <div>
+          <a href="#">
+            Charts
+          </a>
+        </div>
+      </nav>
+      <!-- end links -->
+
+      <!-- aside footer -->
+      <div class="sidebar-footer">
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </div>
+      <!-- end aside footer -->
+    </div>
+  </aside>
+  <!-- End Sidebar -->
+
+  <!-- Start Content -->
+  <section class="main-content">
+    <!-- Start header -->
+    <header class="header">
+      <!-- left section -->
+      <div class="header-left">
+        <span class="greeting">Greetings Stu Dent!</span>
+
+        <!-- Search form -->
+        <form class="search-form">
+          <input id="text-field-hero-input" placeholder="Search..">
+          <label for="text-field-hero-input">Search..</label>
+        </form>
+        <!-- end search form -->
+      </div>
+      <!-- end left section -->
+
+      <!-- Right section -->
+      <div class="header-right">
+        <!-- Account dropdown -->
+        <div class="dropdown">
+          <button type="button" class="dropdown-toggle">
+            <img src="./images/face.jpg" alt="user">
+            <span>Stu Dent</span>
+          </button>
+
+          <div tabindex="-1" class="dropdown-menu">
+            <ul role="menu" aria-hidden="true" aria-orientation="vertical">
+              <li role="menuitem">
+                <a href="#">Edit profile</a>
+              </li>
+              <li role="menuitem">
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end account dropdown -->
+
+        <!-- Settings Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">&#9881;</button>
+          <div tabindex="-1" class="dropdown-menu">
+            <ul role="menu" aria-hidden="true" aria-orientation="vertical">
+              <li role="menuitem">
+                <a href="#">Settings</a>
+              </li>
+              <li role="menuitem">
+                <a href="#">Update</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End settings dropdown -->
+
+        <!-- Notifications dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">
+            &#9888;
+          </button>
+          <div tabindex="-1" class="dropdown-menu">
+            <h6> Notifications</h6>
+            <ul role="menu" aria-hidden="true" aria-orientation="vertical">
+              <li role="menuitem">
+                <a href="">
+                  <h6>Your account has been verified</h6>
+                  <small> 6 min ago </small>
+                </a>
+              </li>
+              <li role="menuitem">
+                <a href="#">
+                  <h6>You received a new message</h6>
+                  <small> 8 min ago </small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Notifications dropdown -->
+
+        <!-- Messages dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">
+            &#9993;
+            <!-- Count Badge -->
+            <span class="badge">3</span>
+          </button>
+          <div tabindex="-1" class="dropdown-menu">
+            <h6>Messages</h6>
+            <ul role="menu" aria-hidden="true" aria-orientation="vertical">
+              <li role="menuitem">
+                <a href="#">
+                  <div>
+                    <img src="./images/face2.jpg" alt="user">
+                  </div>
+                  <div>
+                    <h6>Mark sent you a message</h6>
+                    <small> 1 Minutes ago </small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Messages dropdown -->
+      </div>
+      <!-- end Right section -->
+    </header>
+    <!-- End Header -->
+
+    <main class="dashboard">
+      <!-- Dashboard info boxes -->
+      <div class="info-boxes">
+        <div class="info-box">
+          <h5>Borrowed</h5>
+          <h5>$62,0076.00</h5>
+          <p>48% target reached</p>
+        </div>
+
+        <div class="info-box">
+          <h5>Annual Profit</h5>
+          <h5>$1,958,104.00</h5>
+          <p>55% target reached</p>
+        </div>
+
+        <div class="info-box">
+          <h5>Lead Conversion</h5>
+          <h5>$234,769.00</h5>
+          <p>87% target reached</p>
+        </div>
+
+        <div class="info-box">
+          <h5>Average Income</h5>
+          <h5>$1,200.00</h5>
+          <p>87% target reached</p>
+        </div>
+      </div>
+
+
+      <!-- CARD => Revenue by location  (Map)-->
+      <div class="card revenue-card">
+        <h4>Revenue by location</h4>
+
+        <!-- Subtitle info -->
+        <div class="card-subtitle">
+            <h5>Sales performance revenue based by country</h5>
+            <div>
+              <button>
+                  Last 7 days
+              </button>
+            </div>
+        </div>
+        <!-- End subtitle info -->
+
+        <!-- Data and map -->
+        <div class="location-grid">
+          <div class="location-table">
+            <div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>United States</td>
+                    <td>$1,671.10</td>
+                    <td> 39% </td>
+                  </tr>
+                  <tr>
+                    <td>Philippines</td>
+                    <td>$1,064.75</td>
+                    <td> 30% </td>
+                  </tr>
+                  <tr>
+                    <td>United Kingdom</td>
+                    <td>$1,055.98</td>
+                    <td> 45% </td>
+                  </tr>
+                  <tr>
+                    <td>Canada</td>
+                    <td>$1,045.49</td>
+                    <td> 80% </td>
+                  </tr>
+                  <tr>
+                    <td>France</td>
+                    <td>$2,050.93</td>
+                    <td> 10% </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="location-map">
+            <div>
+              <img src="./images/map.png" alt="Map showing locations">
+            </div>
+          </div>
+        </div>
+        <!-- end Data and map -->
+      </div>
+      <!-- End of Revenue by location -->
+
+      <!-- Grid: Impressions & Traffic -->
+      <div class="charts-grid">
+        <!-- Card => Impressions chart -->
+        <div class="card impressions-card">
+          <h3>Impressions</h3>
+          <div class="chart-wrapper">
+            <div>
+              <div>
+                <h5>Customers 58.39k</h5>
+                <h2>636,757K</h2>
+              </div>
+            </div>
+            <div class="chart-image">
+              <img src="./images/impressions.png" alt="Impressions Chart">
+            </div>
+          </div>
+        </div>
+        <!-- End of Impressions chart -->
+
+        <!-- Card => Traffic chart -->
+        <div class="card traffic-card">
+          <h3>Traffic</h3>
+          <div class="chart-wrapper">
+            <div>
+              <div>
+                <h5>Customers 58.39k</h5>
+                <h2>636,757K</h2>
+              </div>
+            </div>
+            <div class="chart-image">
+              <img src="./images/traffic.png" alt="Traffic Chart">
+            </div>
+          </div>
+        </div>
+        <!-- End of Traffic chart -->
+      </div>
+
+      <!-- Grid 2/3 and 1/3 -->
+      <div class="stats-grid">
+        <!-- Card => Revenue by location 2 -->
+        <div class="card revenue-card-2">
+          <h4>Revenue by location</h4>
+          <div class="card-subtitle">
+            <h6>Sales performance revenue based by country</h6>
+            <div>
+              <div role="tablist">
+                <div>
+                  <div>
+                    <div>
+                      <button role="tab" aria-selected="true" tabindex="0">
+                        <span>1W</span>
+                      </button>
+                      <button role="tab" aria-selected="true" tabindex="0">
+                        <span>3M</span>
+                      </button>
+                      <button role="tab" aria-selected="true" tabindex="0">
+                        <span>1Y</span>
+                      </button>
+                      <button role="tab" aria-selected="true" tabindex="0">
+                        <span>ALL</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chart-image">
+            <img src="./images/bar-chart.png" alt="Bar Chart">
+          </div>
+        </div>
+        <!-- End of Revenue by location 2 -->
+
+        <!-- Card => Order Statistics -->
+        <div class="card order-stats-card">
+          <div class="card-header">
+            <div>
+              <h4>Order Statistics</h4>
+              <h6>Customers 58.39k</h6>
+            </div>
+            <div id="sales-legend"></div>
+          </div>
+          <div class="chart-image">
+            <img src="./images/order-stats.png" alt="Order Statistics Chart">
+          </div>
+        </div>
+        <!-- End of Order Statistics -->
+      </div>
+    </main>
+  </section>
+  <!-- End Content -->
+</body>
+</html>

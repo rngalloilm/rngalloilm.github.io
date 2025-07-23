@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Carolina Parks - Index</title>
+  <link href='./css/base.css' rel='stylesheet' />
+  <link href='./css/home.css' rel='stylesheet' />
+  <script src="./js/home.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="./">North Carolina Parks</a></h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <div id="map"><img src="/img/ncparkmap.png"></div>
+    <section>
+      <div class="filter-options">
+        <h2>Filter Results</h2>
+        <select id="counties-select" name="county">
+          <option value="all">All Counties</option>
+        </select>
+      </div>
+      <div id="parks-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    Copyright (c) 2017 <a href="./"><strong>Park Reviews</strong></a> All Rights Reserved.
+  </footer>
+  <template id="countyOptionTemplate">
+    <option value="wake">Wake</option>
+  </template>
+  <template id="parkTemplate">
+    <a class="park" href="/park?id=">
+      <h2></h2>
+      <img src="/img/park.jpg">
+      <div class="counties-list">Spans Counties:</div>
+    </a>
+  </template>
+  <template id="countyChipTemplate">
+    <span class="county"></span>
+  </template>
+</body>
+
+</html>

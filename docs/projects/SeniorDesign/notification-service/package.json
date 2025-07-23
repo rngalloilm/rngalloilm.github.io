@@ -1,0 +1,27 @@
+{
+  "name": "notification-serivce",
+  "version": "1.0.0",
+  "description": "Notification Service for ROOTS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest --coverage --detectOpenHandles --verbose"
+  },
+  "author": "ibmckend, hnwallac, rusanche, simahmou, orcarson",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.1.2",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.6",
+    "sequelize": "^6.28.2",
+    "sqlite3": "^5.1.4",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "nodemon": "^2.0.20"
+  }
+}

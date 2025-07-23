@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  # Database service (MariaDB)
+  db:
+    image: mariadb:latest  # Uses official MariaDB image
+    restart: unless-stopped  # Auto-restarts unless manually stopped
+    ports:
+      - "3307:3306"  # Host:3307 → Container:3306
+    env_file:
+      - .env  # Loads environment variables from .env
+    volumes:
+      - mariadb_data:/var/lib/mysql  # Persistent storage
+      - ./database/data:/var/lib/mysql # Data persistence
+      - ./database/db_schema:/docker-entrypoint-initdb.d # Schema persistence
+
+# Volume for MariaDB data persistence
+volumes:
+  mariadb_data:

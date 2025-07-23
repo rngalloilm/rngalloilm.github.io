@@ -1,0 +1,7 @@
+.dockerignore
+.DS_Store
+node_modules
+*.env
+
+proxy/certs/*-key.pem
+proxy/certs/localhost.pem

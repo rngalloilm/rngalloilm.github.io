@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"edu.ncsu.csc216.wolf_hire.model.command","l":"Command"},{"p":"edu.ncsu.csc216.wolf_hire.model.command","l":"Command.CommandValue"}];updateSearchResults();

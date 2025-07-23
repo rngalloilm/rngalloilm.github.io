@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* {
+  box-sizing: border-box;
+  /* Optionally, we animate the drawer. */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#menuToggle svg {
+  width: 40px;
+  fill: #FFF;
+  margin-right: 10px;
+}
+
+nav,
+main {
+  padding: 1em;
+  box-sizing: border-box;
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  flex-basis: 250px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+header {
+  display: flex;
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 1em;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.red {
+  background-color: #990000;
+  color: white;
+}
+
+.orange {
+  background-color: #D14905;
+  color: white;
+}
+
+.yellow {
+  background-color: #FAC800;
+  color: black;
+}
+
+.green {
+  background-color: #6F7D1C;
+  color: white;
+}
+
+.aqua {
+  background-color: #008473;
+  color: white;
+}
+
+.blue {
+  background-color: #427E93;
+  color: white;
+}
+
+.purple {
+  background-color: #4156A1;
+  color: white;
+}

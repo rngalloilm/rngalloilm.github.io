@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Carolina Parks - Park</title>
+  <link href='./css/base.css' rel='stylesheet' />
+  <link href='./css/park.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+  integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+  integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+  crossorigin=""></script>
+  <script src="./js/park.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="./js/common.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="./">North Carolina Parks</a></h1>
+    </nav>
+    <div class="menu"><label><input type="checkbox"> Dark Mode</label></div>
+  </header>
+  <ul id="breadcrumb">
+    <li><a href="./">Home</a></li>
+    <li class="park-name"></li>
+  </ul>
+  <!-- Beginning main -->
+  <main>
+    <!-- Beginning map -->
+
+    <!-- End map -->
+    <!-- Beginning park -->
+    <section id="park-container">
+      <h1 class="park-name"></h1>
+      <img src="./img/park.jpg">
+      <div class="counties-list">Spans Counties:</div>
+      <p id="counties"></p>
+      <h2>Geographical Location</h2>
+      <div id="map-container">
+        <div id="map">
+
+        </div>
+      </div>
+    </section>
+    <!-- end park -->
+  </main>
+  <!-- End main -->
+
+  <footer>
+    Copyright (c) 2017 <a href="./"><strong>NC Parks</strong></a> All Rights Reserved.
+  </footer>
+  <template id="countyChipTemplate">
+    <span class="county"></span>
+  </template>
+</body>
+
+</html>

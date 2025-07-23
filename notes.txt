@@ -1,3 +1,7 @@
 npm run build
 
 and then push, the build is in the docs folder and build folder (git ignored).
+
+Building and running will generate project files.
+
+Now I want the implement more functions in scriptGenerate to look for different file types. First I want  implement a function in scriptGenerate to gather the .java files in 

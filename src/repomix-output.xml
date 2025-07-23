@@ -1,0 +1,1035 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+app.js
+index.js
+js/APIClient.js
+js/HTTPClient.js
+pages/ProjectsPage.js
+styles/projectsStyle.css
+styles/style.css
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="app.js">
+import React from 'react';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import ProjectsPage from './pages/ProjectsPage';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProjectsPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+</file>
+
+<file path="index.js">
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app';
+
+// Find the root div in index.html
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Render the App component
+root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+);
+</file>
+
+<file path="js/APIClient.js">
+import HTTPClient from './HTTPClient.js';
+
+const BASE_API_PATH = '/api';
+
+const handleAuthError = (error) => {
+  if(error.status === 401) {
+    console.warn("Authentication error (401). Redirecting to login.");
+    document.location = '/login';
+  }
+  throw error;
+};
+
+const logIn = (username, password) => {
+  const data = {
+    username: username,
+    password: password
+  };
+  return HTTPClient.post(`${BASE_API_PATH}/auth/login`, data);
+};
+
+const logOut = () => {
+  return HTTPClient.post(`${BASE_API_PATH}/auth/logout`, {});
+};
+
+const getCurrentUser = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/auth/current`)
+  .catch(handleAuthError);
+};
+
+const register = (firstName, lastName, username, password, repeatPass) => {
+  const data = {
+    firstName: firstName,
+    lastName: lastName,
+    username: username,
+    password: password,
+    repeatPassword: repeatPass
+  }
+  return HTTPClient.post(`${BASE_API_PATH}/auth/register`, data);
+}
+
+const getMonthlySpending = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/dashboard/spending`);
+}
+
+const getFreeCash = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/dashboard/unallocated`);
+}
+
+const addIncome = (data) => {
+  return HTTPClient.post(`${BASE_API_PATH}/income`, data);
+}
+
+const getIncomes = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/income`);
+}
+
+const deleteIncome = (incomeId) => {
+  return HTTPClient.delete(`${BASE_API_PATH}/income/${incomeId}`);
+}
+
+const updateIncome = (incomeId, data) => {
+  return HTTPClient.put(`${BASE_API_PATH}/income/${incomeId}`, data);
+}
+
+const addExpense = (data) => {
+  return HTTPClient.post(`${BASE_API_PATH}/expenses`, data);
+}
+
+const getExpenses = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/expenses`);
+}
+
+const deleteExpense = (expenseId) => {
+  return HTTPClient.delete(`${BASE_API_PATH}/expenses/${expenseId}`);
+}
+
+const updateExpense = (expenseId, data) => {
+  return HTTPClient.put(`${BASE_API_PATH}/expenses/${expenseId}`, data);
+}
+
+const getCategories = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/categories`)
+    .catch(handleAuthError); 
+};
+
+const addCategory = (categoryData) => {
+  return HTTPClient.post(`${BASE_API_PATH}/categories`, categoryData)
+    .catch(handleAuthError); 
+};
+
+const getReportOverview = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/reports/overview`);
+}
+
+const getCalendarEvents = () => {
+  return HTTPClient.get(`${BASE_API_PATH}/calendar/events`)
+    .catch(handleAuthError);
+}
+
+
+export default {
+  handleAuthError,
+  getCurrentUser,
+  logIn,
+  logOut,
+  register,
+  getMonthlySpending,
+  getFreeCash,
+  addIncome,
+  getIncomes,
+  deleteIncome,
+  updateIncome,
+  addExpense,
+  getExpenses,
+  deleteExpense,
+  updateExpense,
+  getCategories,
+  addCategory,
+  getReportOverview,
+  getCalendarEvents
+};
+</file>
+
+<file path="js/HTTPClient.js">
+function processJSONResponse(res) {
+  if(!res.ok) {
+    const error = new Error(`This request was not successful: ${res.statusText} (${res.status})`);
+    error.status = res.status;
+    throw error;
+  }
+  return res.json();
+};
+
+function handleError(err) {
+  console.error('Error in fetch', err);
+  throw err;
+};
+
+export default {
+  get: (url) => {
+    return fetch(url)
+      .then(processJSONResponse)
+      .catch(handleError);
+  },
+
+  post: (url, data) => {
+    return fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(processJSONResponse)
+    .catch(handleError);
+  },
+  
+  put: (url, data) => {
+    return fetch(url, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(processJSONResponse)
+    .catch(handleError);
+
+  },
+
+  delete: (url) => {
+    return fetch(url, {
+      method: 'DELETE',
+      headers: {
+      }
+    })
+  .then(processJSONResponse)
+  .catch(handleError);
+  },
+
+};
+</file>
+
+<file path="pages/ProjectsPage.js">
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import '../styles/projectsStyle.css';
+import '../styles/style.css';
+import collections from '../script/projectFiles.json';
+
+function ProjectsPage() {
+    // State to track which collection and project dropdowns are open
+    const [openCollections, setOpenCollections] = useState({});
+    const [openProjects, setOpenProjects] = useState({});
+    const [openFolders, setOpenFolders] = useState({});
+    const [fileContents, setFileContents] = useState({});
+
+    // New state for description
+    const [showDescription, setShowDescription] = useState(false);
+    const [descriptionContent, setDescriptionContent] = useState('');
+
+    // Toggle collection dropdown and collapse all children
+    const handleCollectionToggle = (collectionName, idx) => {
+        const isOpening = !openCollections[idx];
+
+        setOpenCollections(prev => ({
+            ...prev,
+            [idx]: isOpening
+        }));
+
+        // If closing the collection, collapse everything inside it
+        if (!isOpening) {
+            const collectionPrefix = `${idx}-`;
+
+            // Collapse projects within this collection
+            setOpenProjects(prev => {
+                const nextState = { ...prev };
+                Object.keys(nextState).forEach(key => {
+                    if (key.startsWith(collectionPrefix)) {
+                        delete nextState[key];
+                    }
+                });
+                return nextState;
+            });
+
+            // Collapse folders and files within this collection
+            const collapseDescendants = (prevState) => {
+                const nextState = { ...prevState };
+                Object.keys(nextState).forEach(key => {
+                    if (key.startsWith(collectionPrefix)) {
+                        delete nextState[key];
+                    }
+                });
+                return nextState;
+            };
+
+            setOpenFolders(collapseDescendants);
+            setFileContents(collapseDescendants);
+        }
+    };
+
+    // Toggle project dropdown and collapse its children
+    const handleProjectToggle = (collectionIdx, projectIdx, files) => {
+        const key = `${collectionIdx}-${projectIdx}`;
+        const isOpening = !openProjects[key];
+
+        setOpenProjects(prev => ({
+            ...prev,
+            [key]: isOpening
+        }));
+
+        if (isOpening) {
+            // If opening, expand top-level folders
+            const fileKeyPrefix = `${key}-`;
+            const topFolderKeys = getTopLevelFolderKeys(files, fileKeyPrefix);
+            setOpenFolders(prev => {
+                const updated = { ...prev };
+                topFolderKeys.forEach(folderKey => {
+                    updated[folderKey] = true;
+                });
+                return updated;
+            });
+        } else {
+            // If closing, collapse folders and files within this project
+            const projectPrefix = `${key}-`;
+            const collapseDescendants = (prevState) => {
+                const nextState = { ...prevState };
+                Object.keys(nextState).forEach(k => {
+                    if (k.startsWith(projectPrefix)) {
+                        delete nextState[k];
+                    }
+                });
+                return nextState;
+            };
+            setOpenFolders(collapseDescendants);
+            setFileContents(collapseDescendants);
+        }
+    };
+
+    // Fetch and show file content
+    const handleFileClick = async (filePath, key) => {
+        if (fileContents[key]) {
+            setFileContents(prev => ({ ...prev, [key]: null }));
+        } else {
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+                setFileContents(prev => ({ ...prev, [key]: text }));
+            } catch (error) {
+                console.error("Failed to fetch file:", error);
+                setFileContents(prev => ({ ...prev, [key]: `Error: Could not load file content.` }));
+            }
+        }
+    };
+
+    // Takes an array of { name, path } and returns a nested tree structure
+    function buildFileTree(files) {
+        // Filter out any files located in a 'node_modules' directory
+        const filteredFiles = files.filter(file => !file.name.split('/').includes('node_modules'));
+
+        const root = {};
+
+        filteredFiles.forEach(file => {
+            const parts = file.name.split('/');
+            let current = root;
+            parts.forEach((part, idx) => {
+                if (idx === parts.length - 1) {
+                    // It's a file
+                    if (!current.files) current.files = [];
+                    current.files.push({ ...file, displayName: part });
+                } else {
+                    // It's a folder
+                    if (!current[part]) current[part] = {};
+                    current = current[part];
+                }
+            });
+        });
+
+        // Recursively convert the object to an array for rendering
+        function toArray(node, folderName = null) {
+            let children = [];
+            for (const key in node) {
+                if (key === 'files') continue;
+                children.push({
+                    type: 'folder',
+                    name: key,
+                    children: toArray(node[key], key)
+                });
+            }
+            if (node.files) {
+                children = children.concat(
+                    node.files.map(f => ({ type: 'file', ...f }))
+                );
+            }
+            return children;
+        }
+
+        return toArray(root);
+    }
+
+    const [showScript, setShowScript] = useState(false);
+    const [scriptContent, setScriptContent] = useState('');
+
+    // Handler to fetch and toggle script display
+    const handleShowScript = async () => {
+        if (!showScript && !scriptContent) {
+            try {
+                // Fetch the script file
+                const response = await fetch('../scriptGenerateProjectFiles.js');
+                const text = await response.text();
+                setScriptContent(text);
+            } catch (e) {
+                setScriptContent("Could not load script content.");
+            }
+        }
+        setShowScript(prev => !prev);
+    };
+
+    // New handler to fetch and toggle description display
+    const handleShowDescription = async () => {
+        if (!showDescription && !descriptionContent) {
+            try {
+                const response = await fetch('/description.md'); // Fetches from the 'public' folder
+                if (!response.ok) throw new Error('Network response was not ok');
+                const text = await response.text();
+                setDescriptionContent(text);
+            } catch (e) {
+                console.error(e);
+                setDescriptionContent("Could not load description.md. Make sure it's in the 'public' folder.");
+            }
+        }
+        setShowDescription(prev => !prev);
+    };
+
+    function FileTree({ nodes, onFileClick, fileContents, fileKeyPrefix = '', openFolders, setOpenFolders, setFileContents }) {
+        const handleFolderToggle = (key) => {
+            const isOpening = !openFolders[key];
+    
+            // Toggle the current folder's state
+            setOpenFolders(prev => ({ ...prev, [key]: isOpening }));
+    
+            // If we are closing the folder, collapse all its children
+            if (!isOpening) {
+                const childPrefix = `${key}/`;
+    
+                // Function to filter out children from a state object
+                const collapseDescendants = (prevState) => {
+                    const nextState = { ...prevState };
+                    Object.keys(nextState).forEach(k => {
+                        if (k.startsWith(childPrefix)) {
+                            delete nextState[k];
+                        }
+                    });
+                    return nextState;
+                };
+    
+                // Apply the collapse logic to sub-folders and open files
+                setOpenFolders(collapseDescendants);
+                setFileContents(collapseDescendants);
+            }
+        };
+    
+        return (
+            <ul className="filetree-list">
+                {nodes.map((node, idx) => {
+                    const key = fileKeyPrefix + node.name + idx;
+                    if (node.type === 'folder') {
+                        return (
+                            <li key={key}>
+                                <button
+                                    className="file-btn filetree-folder-btn"
+                                    onClick={() => handleFolderToggle(key)}
+                                >
+                                    {openFolders[key] ? '▾' : '▸'} {node.name}
+                                </button>
+                                {openFolders[key] && (
+                                    <FileTree
+                                        nodes={node.children}
+                                        onFileClick={onFileClick}
+                                        fileContents={fileContents}
+                                        fileKeyPrefix={key + '/'}
+                                        openFolders={openFolders}
+                                        setOpenFolders={setOpenFolders}
+                                        setFileContents={setFileContents} // Pass down
+                                    />
+                                )}
+                            </li>
+                        );
+                    } else {
+                        // It's a file
+                        return (
+                            <li key={key}>
+                                <button
+                                    className="file-btn filetree-file-btn"
+                                    onClick={() => onFileClick(node.path, key)}
+                                >
+                                    {node.displayName}
+                                </button>
+                                {fileContents[key] && (
+                                    <pre
+                                        className="file-content"
+                                        onClick={() => onFileClick(node.path, key)}
+                                        title="Click to collapse"
+                                    >
+                                        {fileContents[key]}
+                                    </pre>
+                                )}
+                            </li>
+                        );
+                    }
+                })}
+            </ul>
+        );
+    }
+
+    function getTopLevelFolderKeys(files, fileKeyPrefix) {
+        const tree = buildFileTree(files);
+        return tree
+            .filter(node => node.type === 'folder')
+            .map((node, idx) => fileKeyPrefix + node.name + idx);
+    }
+
+    // Separate independent projects and collections
+    const independentProjects = collections.filter(
+        c => c.collection === null &&
+            !c.projects[0].name.startsWith('Java-') &&
+            !c.projects[0].name.startsWith('Node-') &&
+            !c.projects[0].name.startsWith('C-')
+    );
+
+    const groupedCollections = collections.filter(
+        c => c.collection !== null ||
+            c.projects[0].name.startsWith('Java-') ||
+            c.projects[0].name.startsWith('Node-') ||
+            c.projects[0].name.startsWith('C-')
+    );
+
+    return (
+        <main className="projects">
+            <div className="projects-header"> 
+                <h1 className="projects-title">CSC Coding Projects</h1>
+
+                <h3 className="projects-description">Check out Senior Design and Node-WebApps/Final.</h3>
+
+                <hr className="projects-divider" />
+                <div className="projects-extensions">
+                    <strong>Supported extensions:</strong> .c, .h, .java, .html, .css, .js, .json, .jsx, .md, .conf, Dockerfile, .yml, .sh, .xml, .pem, .sql
+                </div>
+
+                <button className="show-script-btn" onClick={handleShowScript}>
+                    {showScript ? <strong>Hide</strong> : <strong>Show</strong>} scriptGenerateProjectFiles.js
+                </button>
+                {showScript && (
+                    <pre className="script-content-block">{scriptContent}</pre>
+                )}
+
+                {/* New button and content block for description.md */}
+                <button className="show-description-btn" onClick={handleShowDescription}>
+                    {showDescription ? <strong>Hide</strong> : <strong>Show</strong>} Project Description
+                </button>
+                {showDescription && (
+                    <div className="description-content-block">
+                        <ReactMarkdown>{descriptionContent}</ReactMarkdown>
+                    </div>
+                )}
+                
+                <hr className="projects-divider" />
+            </div>
+
+            <div id="projects">
+                {/* Independent projects at the top */}
+                {independentProjects.map((projectGroup, idx) => {
+                    const project = projectGroup.projects[0];
+                    const key = `independent-${idx}`;
+                    return (
+                        <div key={key} className="independent-collection">
+                            <button
+                                className="independent-collection-btn dropbtn"
+                                onClick={() => handleCollectionToggle(project.name, key)}
+                            >
+                                {project.name}
+                            </button>
+                            {openCollections[key] && (
+                                <div className="collection-content">
+                                    <FileTree
+                                        nodes={buildFileTree(project.files)}
+                                        onFileClick={handleFileClick}
+                                        fileContents={fileContents}
+                                        fileKeyPrefix={`${key}-`}
+                                        openFolders={openFolders}
+                                        setOpenFolders={setOpenFolders}
+                                        setFileContents={setFileContents}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    );
+                })}
+
+                {/* Collections below */}
+                {groupedCollections.map((collection, cIdx) => (
+                    <div key={cIdx} className="collection">
+                        {/* Collection header (if not null) */}
+                        {collection.collection && (
+                            <button
+                                className="collection-btn dropbtn"
+                                onClick={() => handleCollectionToggle(collection.collection, cIdx)}
+                            >
+                                {collection.collection}
+                            </button>
+                        )}
+                        {/* Only show projects if collection is open, or if it's a standalone project */}
+                        {(collection.collection === null || openCollections[cIdx]) && (
+                            <div className="collection-content">
+                                {collection.projects.map((project, pIdx) => (
+                                    <div key={pIdx} className="project">
+                                        <button
+                                            className="project-btn dropbtn"
+                                            onClick={() => handleProjectToggle(cIdx, pIdx, project.files)}
+                                        >
+                                            {project.name}
+                                        </button>
+                                        {openProjects[`${cIdx}-${pIdx}`] && (
+                                            <div className="project-content">
+                                                {project.files && project.files.length > 0 && (
+                                                    <FileTree
+                                                        nodes={buildFileTree(project.files)}
+                                                        onFileClick={handleFileClick}
+                                                        fileContents={fileContents}
+                                                        fileKeyPrefix={`${cIdx}-${pIdx}-`}
+                                                        openFolders={openFolders}
+                                                        setOpenFolders={setOpenFolders}
+                                                        setFileContents={setFileContents}
+                                                    />
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </main>
+    );
+}
+
+export default ProjectsPage;
+</file>
+
+<file path="styles/projectsStyle.css">
+/* Header */
+.projects-title {
+  margin-bottom: 25px;
+}
+.projects-description {
+  margin-bottom: 25px;
+}
+
+/* Layout/structure */
+.collection-content {
+  margin-left: 2em;
+}
+.project-content {
+  margin-left: 2em;
+}
+.project {
+  margin-bottom: 20px;
+}
+
+/* Collection button (blue) */
+.collection-btn {
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: #00aeff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.75em 1.5em;
+  margin-bottom: 0.7em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 1em;
+  z-index: 12;
+  background: #00aeff;
+}
+.collection-btn:hover {
+  background: #e0f7fa;
+  color: #164437;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+}
+
+/* Independent project (red) */
+.independent-collection {
+  margin-bottom: 1.0em;
+}
+.independent-collection-btn {
+  margin-left: 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 0.75em 1.5em;
+  margin-bottom: 0.7em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 1em;
+  z-index: 11;
+}
+.independent-collection-btn:hover {
+  background: #e0f7fa;
+  color: #164437;
+  box-shadow: 0 4px 16px rgba(229,57,53,0.13);
+}
+
+/* Project button */
+.project-btn {
+  margin-left: 1em;
+  background: #00aeff;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 0.6em 1.2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  font-size: 1em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+  width: auto;
+  max-width: 60%;
+  display: inline-block;
+  min-width: 120px;
+  position: sticky;
+  top: 1em;
+  z-index: 9;
+  background: #00aeff;
+}
+.project-btn:hover {
+  background: #e0f7fa;
+  color: #164437;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* File button */
+.file-btn {
+  margin-left: 1em;
+  background: #f4f4f4;
+  color: #333;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  padding: 0.5em 1em;
+  margin-bottom: 0.3em;
+  font-size: 0.98em;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  cursor: pointer;
+  width: auto;
+  max-width: 40%;
+  display: inline-block;
+  min-width: 80px;
+}
+.file-btn:hover {
+  background: #e0f7fa;
+  color: #164437;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+}
+
+.filetree-folder-btn {
+  font-weight: bold;
+  background: #e5dcff;
+  color: #000000;
+}
+.filetree-file-btn {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+}
+
+/* File content (code block) */
+.file-content {
+  background: #f4f4f4;
+  padding: 1em;
+  margin-left: 2em;
+  overflow-x: auto;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.97em;
+  margin-top: 0.5em;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.file-content:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  /* background: #e9f7fa; */
+}
+
+/* File tree */
+.filetree-list {
+  list-style: none;
+  padding-left: 1em;
+  margin: 0;
+}
+
+/* Legacy/utility styles */
+.dropbtn {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.dropdown-content {
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 10px 10px 0px 10px;
+  margin-top: 0px;
+  border-radius: 10px;
+  height: 0;
+  transition: height 0.3s ease-out;
+  display: block;
+}
+.show {
+  height: auto;
+  transition: height 0.3s ease-in-out;
+}
+.dropdown-content button {
+  background-color: #f1f1f1;
+  color: black;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  display: inline-block;
+  width: auto;
+  margin: 5px 0;
+  margin-top: 10px;
+}
+pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.projects-divider {
+  border: none;
+  border-top: 2px solid #e0e0e0;
+  margin: 1.5em 0 1.5em 0;
+}
+
+.projects-extensions {
+  margin-bottom: 1.5em;
+  color: #333;
+  font-size: 1em;
+  background: #f8fafd;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.show-script-btn {
+  display: block;
+  margin: 1em 0 0.5em 0;
+  background: #FFD700;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.show-script-btn:hover {
+  background: #ffffff;
+}
+
+.script-content-block {
+  background: #181c20;
+  color: #e0e0e0;
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 0.95em;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  max-height: 400px;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* New button for showing description */
+.show-description-btn {
+  display: block;
+  margin: 1em 0 0.5em 0;
+  background: #FFD700;
+  color: #181c20;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: sticky;
+  top: 1em;
+  z-index: 11;
+}
+
+.show-description-btn:hover {
+  background: #ffffff;
+}
+
+/* New block for formatted description content */
+.description-content-block {
+  background: #f8fafd;
+  color: #333;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* Styles for common markdown elements inside the block */
+.description-content-block h1,
+.description-content-block h2,
+.description-content-block h3 {
+  color: #000000;
+  text-align: left;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.description-content-block p {
+  margin-bottom: 1em;
+}
+
+.description-content-block ul,
+.description-content-block ol {
+  padding-left: 2em;
+}
+
+.description-content-block code {
+  background-color: #eef;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+}
+
+.description-content-block pre {
+  background-color: #181c20;
+  color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+</file>
+
+<file path="styles/style.css">
+body {
+    font-family: Georgia, sans-serif;
+    margin: 20px;
+    background-color: #2c2f36;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+h3 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+</file>
+
+</files>

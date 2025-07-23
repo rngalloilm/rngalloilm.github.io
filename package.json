@@ -13,17 +13,20 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1"
   },
   "scripts": {
     "generate:projects": "node scriptGenerateProjectFiles.js",
+    "copy:script": "cp scriptGenerateProjectFiles.js public/",
     "start": "react-scripts start",
     "build": "react-scripts build && ren build docs",
     "build:linux": "BUILD_PATH=./docs react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "npm run generate:projects"
+    "prebuild": "npm run generate:projects && npm run copy:script",
+    "prestart": "npm run generate:projects && npm run copy:script"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,63 @@
+.form-div {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    background-color: #990100;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+h1 {
+    font-family: "Roboto";
+    color: white;
+}
+
+.entry-label {
+    font-family:"Roboto";
+    color: white;
+    grid-area: l;
+}
+
+input[type=text] {
+    width: 200px;
+    font-family:"Roboto";
+    grid-area: r;
+    
+    margin-left: auto;
+}
+
+.input-div {
+    width: 330px;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: "l r";
+}
+
+.form-button {
+    font: "Roboto";
+    padding: 10px;
+    margin-top: 10px;
+    width: 90%;
+    background-color: #990100;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    font-size: 14pt;
+    transition-duration: 300ms;
+    font-weight: bold;
+}
+
+.form-button:hover {
+    background-color: white;
+    color:#990100;
+    transition-duration: 300ms;
+}
+
+.button-div {
+    display: flex;
+}
+
+#clear {
+    margin-left: 10px;
+}

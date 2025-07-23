@@ -1,0 +1,96 @@
+.main-div {
+  margin-top:-20px;
+}
+
+.content-div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: #990100;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
+  height: fit-content;
+}
+
+.admin-text-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.admin-controls-div {
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto";
+  color: white;
+}
+
+.label-admin {
+  font-family: "Roboto";
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-admin {
+  display:flex;
+  /* justify-content: space-between; */
+  flex-direction: row;
+}
+
+.form-button-admin {
+  font: "Roboto";
+  padding: 10px;
+  margin-top: 10px;
+  width: 90%;
+  background-color: #990100;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-size: 14pt;
+  transition-duration: 300ms;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.form-button-admin:hover {
+  background-color: white;
+  color:#990100;
+  transition-duration: 300ms;
+}
+
+.input-admin {
+  width: 200px;
+  font-family:"Roboto"; 
+  margin-left: auto;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+
+
+.admin-select, .admin-option {
+  width: 100px;
+  font-family:"Roboto"; 
+  margin-left: auto;
+  margin-right: 3px;
+}
+
+.error {
+  color: rgb(255, 255, 255);
+  font-family: "Roboto";
+  font-size: 10pt;
+}
+
+.success {
+  color: rgb(255, 255, 255);
+  font-family: "Roboto";
+  font-size: 10pt;
+}
