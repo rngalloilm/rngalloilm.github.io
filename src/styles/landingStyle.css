@@ -1,0 +1,26 @@
+.landing-container {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .landing-title {
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.5em;
+    color: #a9b3c1;
+    margin-bottom: 40px;
+  }
+  
+  .landing-description {
+    font-size: 1.2em;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: justify;
+  }

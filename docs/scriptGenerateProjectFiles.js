@@ -44,6 +44,12 @@ function gatherFiles(projectDir, baseDir = projectDir) {
     const files = fs.readdirSync(projectDir);
 
     files.forEach(file => {
+        // --- THIS IS THE NEW LINE ---
+        // If the directory is node_modules, skip it entirely.
+        if (file === 'node_modules') {
+            return;
+        }
+
         const fullPath = path.join(projectDir, file);
         const stat = fs.statSync(fullPath);
         if (stat.isDirectory()) {
@@ -54,7 +60,7 @@ function gatherFiles(projectDir, baseDir = projectDir) {
                 // Show the path relative to the project root, but strip common folders from the start
                 name: stripCommonFolders(path.relative(baseDir, fullPath).replace(/\\/g, '/')),
                 // Web-friendly path for fetching the file
-                path: fullPath.replace(PROJECTS_DIR, '/projects').replace(/\\/g, '/')
+                path: fullPath.replace(path.join(__dirname, '..', 'public'), '').replace(/\\/g, '/') // Adjusted path for web
             });
         }
     });
@@ -109,6 +115,8 @@ function buildCollections() {
  */
 function main() {
     const collections = buildCollections();
+    // Ensure the output directory exists
+    fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(collections, null, 2));
     console.log(`Generated ${OUTPUT_FILE}`);
 }

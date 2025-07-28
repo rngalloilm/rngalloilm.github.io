@@ -1,7 +1,19 @@
 body {
     font-family: Georgia, sans-serif;
-    margin: 20px;
+    margin: 0; /* Remove default body margin */
     background-color: #2c2f36;
+}
+
+/* This is the main container for the layout */
+.app-layout {
+  display: flex;
+}
+
+/* This is the content area to the right of the navbar */
+.content-area {
+  margin-left: 200px; /* Same width as the navbar */
+  padding: 20px;
+  width: 100%;
 }
 
 h1 {
