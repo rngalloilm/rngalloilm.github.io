@@ -8,20 +8,17 @@ const SUPPORTED_EXTENSIONS = [
   'Dockerfile', '.yml', '.sh', '.xml', '.pem', '.sql'
 ];
 
-// Define the main projects directory and the output JSON file path
-const PROJECTS_DIR = path.join(__dirname, 'public', 'projects');
-const OUTPUT_FILE = path.join(__dirname, 'src/script', 'projectFiles.json');
+// Define paths relative to the script's location
+const BASE_DIR = __dirname;
+const PROJECTS_DIR = path.join(BASE_DIR, 'public', 'projects');
+const PUBLIC_DIR = path.join(BASE_DIR, 'public');
+const OUTPUT_FILE = path.join(BASE_DIR, 'src', 'script', 'projectFiles.json');
 
 /**
  * Removes common/unwanted directory segments from a relative file path.
- * This helps clean up file paths for display by removing segments like 'edu', 'ncsu', 'csc', etc.
- * @param {string} relPath - The relative path from the project root to the file
- * @returns {string} - The cleaned-up relative path
  */
 function stripCommonFolders(relPath) {
-    // Split the path into segments
     let parts = relPath.split('/');
-    // Remove any directory segment matching the following rules
     parts = parts.filter(part =>
         part !== 'edu' &&
         part !== 'ncsu' &&
@@ -34,33 +31,34 @@ function stripCommonFolders(relPath) {
 }
 
 /**
- * Recursively gathers all supported files in a project directory and its subdirectories.
- * @param {string} projectDir - The absolute path to the project directory
- * @param {string} baseDir - The root directory for relative path calculation (defaults to projectDir)
- * @returns {Array<Object>} - Array of file objects with cleaned name and web path
+ * Recursively gathers all supported files in a project directory.
  */
 function gatherFiles(projectDir, baseDir = projectDir) {
     let fileList = [];
+    if (!fs.existsSync(projectDir)) {
+        console.warn(`Warning: Directory not found, skipping: ${projectDir}`);
+        return [];
+    }
     const files = fs.readdirSync(projectDir);
 
     files.forEach(file => {
-        // --- THIS IS THE NEW LINE ---
-        // If the directory is node_modules, skip it entirely.
         if (file === 'node_modules') {
-            return;
+            return; // Skip node_modules
         }
 
         const fullPath = path.join(projectDir, file);
         const stat = fs.statSync(fullPath);
+
         if (stat.isDirectory()) {
-            // Recurse into subdirectories, always passing the original baseDir
             fileList = fileList.concat(gatherFiles(fullPath, baseDir));
-        } else if (SUPPORTED_EXTENSIONS.some(ext => file.endsWith(ext))) {
+        } else if (SUPPORTED_EXTENSIONS.some(ext => file.endsWith(ext) || file === ext)) {
+            // --- THIS IS THE CORRECTED PART ---
+            // Create a web-accessible relative path from the /public directory
+            const webPath = '/' + path.relative(PUBLIC_DIR, fullPath).replace(/\\/g, '/');
+            
             fileList.push({
-                // Show the path relative to the project root, but strip common folders from the start
                 name: stripCommonFolders(path.relative(baseDir, fullPath).replace(/\\/g, '/')),
-                // Web-friendly path for fetching the file
-                path: fullPath.replace(path.join(__dirname, '..', 'public'), '').replace(/\\/g, '/') // Adjusted path for web
+                path: webPath 
             });
         }
     });
@@ -69,10 +67,7 @@ function gatherFiles(projectDir, baseDir = projectDir) {
 }
 
 /**
- * Builds the collections and independent projects structure for the output JSON.
- * - Folders with a dash in their name are treated as collections (containing multiple projects)
- * - Other folders are treated as independent projects
- * @returns {Array<Object>} - Array of collection and project objects
+ * Builds the collections and independent projects structure.
  */
 function buildCollections() {
     const collections = [];
@@ -96,7 +91,7 @@ function buildCollections() {
                 });
                 collections.push(collection);
             } else {
-                // This is a single project (not part of a named collection).
+                // This is a single project.
                 collections.push({
                     collection: null,
                     projects: [{
@@ -114,9 +109,12 @@ function buildCollections() {
  * Main function to build the JSON and write it to disk.
  */
 function main() {
+    console.log("Generating project files...");
     const collections = buildCollections();
-    // Ensure the output directory exists
-    fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
+    const outputDir = path.dirname(OUTPUT_FILE);
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(collections, null, 2));
     console.log(`Generated ${OUTPUT_FILE}`);
 }
