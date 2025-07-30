@@ -316,7 +316,7 @@ function ProjectsPage() {
 
                 {/* New button and content block for description.md */}
                 <button className="show-description-btn" onClick={handleShowDescription}>
-                    {showDescription ? <strong>Hide</strong> : <strong>Show</strong>} Project Description
+                    {showDescription ? <strong>Hide</strong> : <strong>Show</strong>} Project Descriptions
                 </button>
                 {showDescription && (
                     <div className="description-content-block">

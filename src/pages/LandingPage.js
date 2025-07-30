@@ -7,11 +7,10 @@ function LandingPage() {
     <div className="landing-container">
       <h1 className="landing-title">Welcome to My Portfolio</h1>
       <p className="landing-subtitle">
-        This site showcases a collection of my coding projects from various computer science courses.
+        This site is my sandbox and portfolio.
       </p>
       <p className="landing-description">
-        Use the navigation bar on the left to explore the different projects. 
-        The "Projects" page contains an interactive file viewer for browsing the source code of each project directly in your browser.
+        Use the navigation bar on the left to explore. <br></br> <strong>Projects</strong> showcases raw code from my coding projects.
       </p>
     </div>
   );

@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 body {
     font-family: Georgia, sans-serif;
     margin: 0; /* Remove default body margin */

@@ -36,6 +36,9 @@
   top: 0;
   z-index: 10;
   background: #00aeff;
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
 }
 .collection-btn:hover {
   background: #e0f7fa;
@@ -64,6 +67,10 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
 }
 .independent-collection-btn:hover {
   background: #e0f7fa;
@@ -85,14 +92,17 @@
   font-size: 1em;
   transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
   cursor: pointer;
-  width: auto;
-  max-width: 60%;
+  width: calc(100% - 1em);
+  max-width: 25em;
   display: inline-block;
-  min-width: 120px;
+  min-width: 0;
   position: sticky;
   top: 4em; /* Stick *below* the parent collection button */
   z-index: 9;
   background: #00aeff;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
 }
 .project-btn:hover {
   background: #e0f7fa;
@@ -147,6 +157,7 @@
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   transition: box-shadow 0.2s;
+  max-width: 100%;
 }
 .file-content:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.13);
@@ -235,6 +246,9 @@ pre {
   font-family: inherit;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
 }
 .show-script-btn:hover {
   background: #ffffff;
@@ -252,6 +266,7 @@ pre {
   overflow-y: auto;
   margin-bottom: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  max-width: 100%;
 }
 
 /* New button for showing description */
@@ -270,6 +285,9 @@ pre {
   position: sticky;
   top: 1em;
   z-index: 11;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
 }
 
 .show-description-btn:hover {
