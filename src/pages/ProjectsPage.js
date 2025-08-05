@@ -297,14 +297,17 @@ function ProjectsPage() {
     return (
         <main className="projects">
             <div className="projects-header"> 
-                <h1 className="projects-title">CSC Coding Projects</h1>
+                <h1 className="projects-title">Coding Projects</h1>
 
-                <h3 className="projects-description">Check out Senior Design and Node-WebApps/Final.</h3>
+                <h3 className="projects-description">This is the raw code for my projects. 
+                    <br></br> Working on integrating documentation. 
+                    <br></br> <br></br> Check out Senior Design and Node-WebApps/Final.
+                    <br></br> <br></br> The script below searches my projects in the /public/projects folder and organizes the supported files. 
+                </h3>
 
-                <hr className="projects-divider" />
                 <div className="projects-extensions">
-                    <strong>Supported extensions:</strong> .c, .h, .java, .html, .css, .js, .json, .jsx, .md, .conf, Dockerfile, .yml, .sh, .xml, .pem, .sql<br></br> <br></br>
-                    The script below searches my projects in the /public/projects folder and organizes the supported files on this page. 
+                
+                <strong>Supported extensions:</strong> .c, .h, .java, .html, .css, .js, .json, .jsx, .md, .conf, Dockerfile, .yml, .sh, .xml, .pem, .sql
                 </div>
 
                 <button className="show-script-btn" onClick={handleShowScript}>
@@ -324,7 +327,6 @@ function ProjectsPage() {
                     </div>
                 )}
                 
-                <hr className="projects-divider" />
             </div>
 
             <div id="projects">
@@ -335,7 +337,7 @@ function ProjectsPage() {
                     return (
                         <div key={key} className="independent-collection">
                             <button
-                                className="independent-collection-btn dropbtn"
+                                className="independent-collection-btn"
                                 onClick={() => handleCollectionToggle(project.name, key)}
                             >
                                 {project.name}
@@ -357,13 +359,18 @@ function ProjectsPage() {
                     );
                 })}
 
+                {/* --- NEW: Conditional separator line --- */}
+                {independentProjects.length > 0 && groupedCollections.length > 0 && (
+                    <hr className="project-group-divider" />
+                )}
+
                 {/* Collections below */}
                 {groupedCollections.map((collection, cIdx) => (
                     <div key={cIdx} className="collection">
                         {/* Collection header (if not null) */}
                         {collection.collection && (
                             <button
-                                className="collection-btn dropbtn"
+                                className="collection-btn"
                                 onClick={() => handleCollectionToggle(collection.collection, cIdx)}
                             >
                                 {collection.collection}
@@ -375,7 +382,7 @@ function ProjectsPage() {
                                 {collection.projects.map((project, pIdx) => (
                                     <div key={pIdx} className="project">
                                         <button
-                                            className="project-btn dropbtn"
+                                            className="project-btn"
                                             onClick={() => handleProjectToggle(cIdx, pIdx, project.files)}
                                         >
                                             {project.name}

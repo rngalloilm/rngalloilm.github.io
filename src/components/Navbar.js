@@ -19,6 +19,11 @@ function Navbar() {
             Projects
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/resume">
+            Resume
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

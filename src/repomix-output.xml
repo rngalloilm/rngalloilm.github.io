@@ -653,14 +653,17 @@ function ProjectsPage() {
     return (
         <main className="projects">
             <div className="projects-header"> 
-                <h1 className="projects-title">CSC Coding Projects</h1>
+                <h1 className="projects-title">Coding Projects</h1>
 
-                <h3 className="projects-description">Check out Senior Design and Node-WebApps/Final.</h3>
+                <h3 className="projects-description">This is the raw code for my projects. 
+                    <br></br> Working on integrating documentation. 
+                    <br></br> <br></br> Check out Senior Design and Node-WebApps/Final.
+                    <br></br> <br></br> The script below searches my projects in the /public/projects folder and organizes the supported files. 
+                </h3>
 
-                <hr className="projects-divider" />
                 <div className="projects-extensions">
-                    <strong>Supported extensions:</strong> .c, .h, .java, .html, .css, .js, .json, .jsx, .md, .conf, Dockerfile, .yml, .sh, .xml, .pem, .sql<br></br> <br></br>
-                    The script below searches my projects in the /public/projects folder and organizes the supported files on this page. 
+                
+                <strong>Supported extensions:</strong> .c, .h, .java, .html, .css, .js, .json, .jsx, .md, .conf, Dockerfile, .yml, .sh, .xml, .pem, .sql
                 </div>
 
                 <button className="show-script-btn" onClick={handleShowScript}>
@@ -680,7 +683,6 @@ function ProjectsPage() {
                     </div>
                 )}
                 
-                <hr className="projects-divider" />
             </div>
 
             <div id="projects">
@@ -691,7 +693,7 @@ function ProjectsPage() {
                     return (
                         <div key={key} className="independent-collection">
                             <button
-                                className="independent-collection-btn dropbtn"
+                                className="independent-collection-btn"
                                 onClick={() => handleCollectionToggle(project.name, key)}
                             >
                                 {project.name}
@@ -713,13 +715,18 @@ function ProjectsPage() {
                     );
                 })}
 
+                {/* --- NEW: Conditional separator line --- */}
+                {independentProjects.length > 0 && groupedCollections.length > 0 && (
+                    <hr className="project-group-divider" />
+                )}
+
                 {/* Collections below */}
                 {groupedCollections.map((collection, cIdx) => (
                     <div key={cIdx} className="collection">
                         {/* Collection header (if not null) */}
                         {collection.collection && (
                             <button
-                                className="collection-btn dropbtn"
+                                className="collection-btn"
                                 onClick={() => handleCollectionToggle(collection.collection, cIdx)}
                             >
                                 {collection.collection}
@@ -731,7 +738,7 @@ function ProjectsPage() {
                                 {collection.projects.map((project, pIdx) => (
                                     <div key={pIdx} className="project">
                                         <button
-                                            className="project-btn dropbtn"
+                                            className="project-btn"
                                             onClick={() => handleProjectToggle(cIdx, pIdx, project.files)}
                                         >
                                             {project.name}
@@ -5686,353 +5693,236 @@ export default ProjectsPage;
 </file>
 
 <file path="styles/projectsStyle.css">
-/* Header */
+/* General page setup - creating the "sheet of paper" effect */
+.projects {
+  background-color: #ffffff;
+  color: #333;
+  padding: 40px 50px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 960px;
+  margin: 20px auto; /* Center the sheet on the page */
+}
+
+/* Header section - styled like a resume header */
+.projects-header {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 30px;
+}
 .projects-title {
-  margin-bottom: 25px;
+  color: #1a1a1a;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 2.8em;
 }
 .projects-description {
+  color: #555;
+  text-align: left;
+  font-size: 1.2em;
   margin-bottom: 25px;
 }
-
-/* Layout/structure */
-.collection-content {
-  margin-left: 2em;
+.projects-divider {
+  display: none; /* The header border is enough */
 }
-.project-content {
-  margin-left: 2em;
+
+/* --- Redesign of Dropdown Buttons into Clickable Headings --- */
+
+/* Base style for all clickable headings */
+.collection-btn,
+.independent-collection-btn,
+.project-btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 8px 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s ease-in-out;
+  position: static; /* Remove sticky behavior */
+  font-family: Georgia, serif;
+}
+.collection-btn:hover,
+.independent-collection-btn:hover,
+.project-btn:hover {
+  color: #0073e6; /* Professional blue for hover state */
+}
+
+/* Style for top-level entries (Collections & Independent Projects) */
+.collection-btn,
+.independent-collection-btn {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-top: 25px; /* Restored for spacing between items */
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- Style for the single group divider --- */
+.project-group-divider {
+  border: none;
+  border-top: 2px solid #eee;
+  margin-top: 40px; /* Space above the line */
+  margin-bottom: 15px;
+}
+
+
+/* Style for projects nested within collections */
+.project-btn {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-top: 15px;
+}
+
+/* Content containers with indentation for hierarchy - FIXED */
+.collection > .collection-content,
+.project > .project-content {
+  margin-left: 25px;
+  padding-left: 25px;
+  border-left: 2px solid #f0f0f0;
+}
+
+.independent-collection .collection-content {
+  margin-left: 0; /* No extra indent for independent projects */
+  padding-left: 0;
+  border-left: none;
 }
 .project {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
-/* Collection button (blue) */
-.collection-btn {
-  margin-left: 0;
-  font-weight: bold;
-  font-size: 1.1em;
-  background: #00aeff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 0.75em 1.5em;
-  margin-bottom: 0.7em;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #00aeff;
-  width: 100%;
-  white-space: normal;
-  word-break: break-word;
-}
-.collection-btn:hover {
-  background: #e0f7fa;
-  color: #164437;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+/* --- File Tree Styling --- */
+.filetree-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
 }
 
-/* Independent project (red) */
-.independent-collection {
-  margin-bottom: 1.0em;
-}
-.independent-collection-btn {
-  margin-left: 0;
-  font-weight: bold;
-  font-size: 1.1em;
-  background: #e53935;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 0.75em 1.5em;
-  margin-bottom: 0.7em;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  white-space: normal;
-  word-break: break-word;
-  text-align: left;
-}
-.independent-collection-btn:hover {
-  background: #e0f7fa;
-  color: #164437;
-  box-shadow: 0 4px 16px rgba(229,57,53,0.13);
+/* Add controlled indentation for nested file/folder lists */
+.filetree-list .filetree-list {
+  padding-left: 25px;
+  margin-left: 5px;
+  border-left: 1px solid #f0f0f0;
 }
 
-/* Project button */
-.project-btn {
-  margin-left: 1em;
-  background: #00aeff;
-  color: #fff;
-  border: none;
-  border-radius: 8px; /* Consistent radius */
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  padding: 0.6em 1.2em;
-  margin-bottom: 0.5em;
-  font-weight: 600;
-  font-size: 1em;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-  cursor: pointer;
-  width: calc(100% - 1em);
-  max-width: 25em;
-  display: inline-block;
-  min-width: 0;
-  position: sticky;
-  top: 4em; /* Stick *below* the parent collection button */
-  z-index: 9;
-  background: #00aeff;
-  white-space: normal;
-  word-break: break-word;
-  text-align: left;
-}
-.project-btn:hover {
-  background: #e0f7fa;
-  color: #164437;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-}
-
-/* File button */
 .file-btn {
-  margin-left: 1em;
-  background: #f4f4f4;
-  color: #333;
-  border: 1px solid #d1d1d1;
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-  padding: 0.5em 1em;
-  margin-bottom: 0.3em;
-  font-size: 0.98em;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 4px 0;
+  margin-bottom: 0;
+  font-size: 1em;
+  transition: color 0.2s;
   cursor: pointer;
   width: auto;
-  max-width: 40%;
-  display: inline-block;
-  min-width: 80px;
+  text-align: left;
 }
 .file-btn:hover {
-  background: #e0f7fa;
-  color: #164437;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.09);
+  background: none;
+  color: #0073e6;
 }
-
 .filetree-folder-btn {
   font-weight: bold;
-  background: #e5dcff;
-  color: #000000;
+  color: #333;
 }
 .filetree-file-btn {
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  color: #444;
 }
 
 /* File content (code block) */
 .file-content {
-  background: #f4f4f4;
+  background: #f8f9fa;
+  color: #212529;
   padding: 1em;
   margin-left: 2em;
   overflow-x: auto;
   cursor: pointer;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
-  font-size: 0.97em;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+  font-size: 0.9em;
   margin-top: 0.5em;
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  transition: box-shadow 0.2s;
-  max-width: 100%;
+  box-shadow: none;
+  max-width: 95%;
+  transition: border-color 0.2s;
 }
 .file-content:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
-  /* background: #e9f7fa; */
+  border-color: #d1d8df;
 }
 
-/* File tree */
-.filetree-list {
-  list-style: none;
-  padding-left: 1em;
-  margin: 0;
-}
 
-/* Legacy/utility styles */
-.dropbtn {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-.dropdown-content {
-  overflow: hidden;
-  background-color: #ffffff;
-  padding: 10px 10px 0px 10px;
-  margin-top: 0px;
-  border-radius: 10px;
-  height: 0;
-  transition: height 0.3s ease-out;
-  display: block;
-}
-.show {
-  height: auto;
-  transition: height 0.3s ease-in-out;
-}
-.dropdown-content button {
-  background-color: #f1f1f1;
-  color: black;
-  padding: 8px;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  display: inline-block;
-  width: auto;
-  margin: 5px 0;
-  margin-top: 10px;
-}
-pre {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 5px;
-  max-width: 90%;
-  word-wrap: break-word;
-}
-
-.projects-divider {
-  border: none;
-  border-top: 2px solid #e0e0e0;
-  margin: 1.5em 0 1.5em 0;
-}
-
+/* --- Utility Buttons and Blocks --- */
 .projects-extensions {
   margin-bottom: 1.5em;
-  color: #333;
-  font-size: 1em;
-  background: #f8fafd;
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-}
-
-.show-script-btn {
-  display: block;
-  margin: 1em 0 0.5em 0;
-  background: #FFD700;
-  color: #000000;
-  border: none;
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  white-space: normal;
-  word-break: break-word;
-  text-align: left;
-}
-.show-script-btn:hover {
-  background: #ffffff;
-}
-
-.script-content-block {
-  background: #181c20;
-  color: #e0e0e0;
-  padding: 1em;
-  border-radius: 8px;
+  color: #444;
   font-size: 0.95em;
+  background: #f8fafd;
+  padding: 0.8em 1.2em;
+  border-radius: 4px;
+  line-height: 1.5;
+  border: 1px solid #e8eef3;
+}
+.show-script-btn,
+.show-description-btn {
+  display: inline-block;
+  margin: 1em 1em 0.5em 0;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  font-weight: 500;
+  position: static;
+}
+.show-script-btn:hover,
+.show-description-btn:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+.script-content-block {
+  background: #282c34;
+  color: #abb2bf;
+  padding: 1em;
+  border-radius: 4px;
+  font-size: 0.9em;
   font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
   max-height: 400px;
-  overflow-x: auto;
-  overflow-y: auto;
-  margin-bottom: 1em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  max-width: 100%;
+  overflow: auto;
+  margin: 1em 0;
+  box-shadow: none;
 }
-
-/* New button for showing description */
-.show-description-btn {
-  display: block;
-  margin: 1em 0 0.5em 0;
-  background: #FFD700;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-family: inherit;
-  cursor: pointer;
-  transition: background 0.2s;
-  position: sticky;
-  top: 1em;
-  z-index: 11;
-  white-space: normal;
-  word-break: break-word;
-  text-align: left;
-}
-
-.show-description-btn:hover {
-  background: #ffffff;
-}
-
-/* New block for formatted description content */
 .description-content-block {
   background: #f8fafd;
   color: #333;
-  padding: 1em 1.5em;
-  border-radius: 8px;
+  padding: 1.5em;
+  border: 1px solid #e8eef3;
+  border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.05em;
-  line-height: 1.6;
-  margin-bottom: 1em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  line-height: 1.7;
+  margin: 1em 0;
+  box-shadow: none;
 }
-
-/* Styles for common markdown elements inside the block */
 .description-content-block h1,
 .description-content-block h2,
 .description-content-block h3 {
-  color: #333;
+  color: #1a1a1a;
   text-align: left;
-  margin-top: 1.2em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.3em;
   border-bottom: 1px solid #e0e0e0;
 }
-
-.description-content-block p {
-  margin-bottom: 1em;
-}
-
-.description-content-block ul,
-.description-content-block ol {
-  padding-left: 2em;
-}
-
-.description-content-block code {
-  background-color: #eef;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-  font-size: 0.9em;
-  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
-}
-
 .description-content-block pre {
-  background-color: #181c20;
-  color: #e0e0e0;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 5px;
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-x: auto;
+  background-color: #282c34;
+  color: #abb2bf;
+  border: 1px solid #212529;
 }
 </file>
 

@@ -1,0 +1,45 @@
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+  }
+  
+  .resume-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .resume-download-link {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #a9b3c1;
+  }
+  
+  .resume-download-link a {
+    color: #00aeff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .resume-download-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .resume-viewer {
+    width: 100%;
+    max-width: 850px; /* Standard paper width for large screens */
+    height: 1100px; /* Standard paper height */
+    background-color: #555; /* Placeholder color while PDF loads */
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* MODIFIED: Changed selector from .resume-pdf-object to .resume-iframe */
+  .resume-iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+  }
