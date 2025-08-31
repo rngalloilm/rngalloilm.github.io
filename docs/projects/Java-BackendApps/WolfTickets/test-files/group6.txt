@@ -1,5 +1,0 @@
-! OIT
-# License Renewal,-15
-* Camtasia,active
-* Adobe Creative,active
-- Collect list of all users first.
