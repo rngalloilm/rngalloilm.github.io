@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+  <form action="/register" method="post" enctype="multipart/form-data">
+    <h1>Registration Form</h1>
+
+    <section>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" pattern="[a-z]{5,}" required>
+
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" minlength="8" required>
+
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" minlength="8" required>
+    </section>
+
+    <section>
+      <label for="language">Preferred Language:</label>
+      <select id="language" name="language" required>
+        <option value="">Select a language...</option>
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="italian">Italian</option>
+      </select>
+    </section>
+    
+    <section>
+      <label for="terms">
+        <input type="checkbox" id="terms" name="terms" required>
+        I agree to the <a href="#">terms and conditions</a>.
+      </label>
+      <label for="newsletter">
+        <input type="checkbox" id="newsletter" newsletter="terms">
+        Sign up for the weekly newsletter.
+      </label>
+    </section>
+
+    <button type="submit">Submit</button>
+  </form>
+  
+</body>
+</html>

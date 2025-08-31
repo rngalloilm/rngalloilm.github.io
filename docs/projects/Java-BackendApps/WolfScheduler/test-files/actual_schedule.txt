@@ -1,0 +1,5 @@
+CSC 216,Software Development Fundamentals,601,3,jctetter,A
+CSC 217,Software Development Fundamentals Lab,601,1,sesmith5,A
+CSC 316,Data Structures and Algorithms,001,3,jtking,MW,830,945
+Exercise,UTHS,800,900,Cardio days
+Lunch,MTWHF,1330,1430,

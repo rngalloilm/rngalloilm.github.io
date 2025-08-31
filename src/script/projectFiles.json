@@ -1142,6 +1142,784 @@
     ]
   },
   {
+    "collection": null,
+    "projects": [
+      {
+        "name": "JavaFullStack",
+        "files": [
+          {
+            "name": ".github/checkstyle.xml",
+            "path": "/projects/JavaFullStack/.github/checkstyle.xml"
+          },
+          {
+            "name": ".github/workflows/build-cm.yml",
+            "path": "/projects/JavaFullStack/.github/workflows/build-cm.yml"
+          },
+          {
+            "name": "package-lock.json",
+            "path": "/projects/JavaFullStack/package-lock.json"
+          },
+          {
+            "name": "package.json",
+            "path": "/projects/JavaFullStack/package.json"
+          },
+          {
+            "name": "project_docs/DeveloperGuide.md",
+            "path": "/projects/JavaFullStack/project_docs/DeveloperGuide.md"
+          },
+          {
+            "name": "project_docs/HumanFlourishing.md",
+            "path": "/projects/JavaFullStack/project_docs/HumanFlourishing.md"
+          },
+          {
+            "name": "project_docs/PrivacyPolicy.md",
+            "path": "/projects/JavaFullStack/project_docs/PrivacyPolicy.md"
+          },
+          {
+            "name": "project_docs/UserGuide.md",
+            "path": "/projects/JavaFullStack/project_docs/UserGuide.md"
+          },
+          {
+            "name": "README.md",
+            "path": "/projects/JavaFullStack/README.md"
+          },
+          {
+            "name": "pom.xml",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/pom.xml"
+          },
+          {
+            "name": "src/main/java/config/Roles.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/config/Roles.java"
+          },
+          {
+            "name": "src/main/java/config/SetupDataLoader.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/config/SetupDataLoader.java"
+          },
+          {
+            "name": "src/main/java/config/SpringSecurityConfig.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/config/SpringSecurityConfig.java"
+          },
+          {
+            "name": "src/main/java/controller/AuthController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/AuthController.java"
+          },
+          {
+            "name": "src/main/java/controller/DocumentController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/DocumentController.java"
+          },
+          {
+            "name": "src/main/java/controller/IngredientController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/IngredientController.java"
+          },
+          {
+            "name": "src/main/java/controller/InventoryController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/InventoryController.java"
+          },
+          {
+            "name": "src/main/java/controller/ItemController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/ItemController.java"
+          },
+          {
+            "name": "src/main/java/controller/LocationController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/LocationController.java"
+          },
+          {
+            "name": "src/main/java/controller/MenuController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/MenuController.java"
+          },
+          {
+            "name": "src/main/java/controller/OrderController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/OrderController.java"
+          },
+          {
+            "name": "src/main/java/controller/RecipeController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/RecipeController.java"
+          },
+          {
+            "name": "src/main/java/controller/UserController.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/controller/UserController.java"
+          },
+          {
+            "name": "src/main/java/dto/inventory/IngredientDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/inventory/IngredientDto.java"
+          },
+          {
+            "name": "src/main/java/dto/inventory/InventoryDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/inventory/InventoryDto.java"
+          },
+          {
+            "name": "src/main/java/dto/inventory/InventoryItemDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/inventory/InventoryItemDto.java"
+          },
+          {
+            "name": "src/main/java/dto/inventory/ItemDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/inventory/ItemDto.java"
+          },
+          {
+            "name": "src/main/java/dto/inventory/RecipeDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/inventory/RecipeDto.java"
+          },
+          {
+            "name": "src/main/java/dto/inventory/RecipeIngredientDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/inventory/RecipeIngredientDto.java"
+          },
+          {
+            "name": "src/main/java/dto/JwtAuthResponse.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/JwtAuthResponse.java"
+          },
+          {
+            "name": "src/main/java/dto/LocationDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/LocationDto.java"
+          },
+          {
+            "name": "src/main/java/dto/LoginDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/LoginDto.java"
+          },
+          {
+            "name": "src/main/java/dto/menu/MenuDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/menu/MenuDto.java"
+          },
+          {
+            "name": "src/main/java/dto/menu/MenuItemDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/menu/MenuItemDto.java"
+          },
+          {
+            "name": "src/main/java/dto/menu/MenuRecipeDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/menu/MenuRecipeDto.java"
+          },
+          {
+            "name": "src/main/java/dto/orders/OrderDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/orders/OrderDto.java"
+          },
+          {
+            "name": "src/main/java/dto/orders/OrderItemDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/orders/OrderItemDto.java"
+          },
+          {
+            "name": "src/main/java/dto/RegisterDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/RegisterDto.java"
+          },
+          {
+            "name": "src/main/java/dto/requests/CreateIngredientRequest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/requests/CreateIngredientRequest.java"
+          },
+          {
+            "name": "src/main/java/dto/requests/CreateItemRequest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/requests/CreateItemRequest.java"
+          },
+          {
+            "name": "src/main/java/dto/RoleDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/RoleDto.java"
+          },
+          {
+            "name": "src/main/java/dto/UserDto.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/dto/UserDto.java"
+          },
+          {
+            "name": "src/main/java/entity/inventory/Ingredient.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/inventory/Ingredient.java"
+          },
+          {
+            "name": "src/main/java/entity/inventory/Inventory.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/inventory/Inventory.java"
+          },
+          {
+            "name": "src/main/java/entity/inventory/InventoryItem.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/inventory/InventoryItem.java"
+          },
+          {
+            "name": "src/main/java/entity/inventory/Item.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/inventory/Item.java"
+          },
+          {
+            "name": "src/main/java/entity/inventory/Recipe.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/inventory/Recipe.java"
+          },
+          {
+            "name": "src/main/java/entity/inventory/RecipeIngredient.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/inventory/RecipeIngredient.java"
+          },
+          {
+            "name": "src/main/java/entity/Location.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/Location.java"
+          },
+          {
+            "name": "src/main/java/entity/menu/Menu.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/menu/Menu.java"
+          },
+          {
+            "name": "src/main/java/entity/menu/MenuItem.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/menu/MenuItem.java"
+          },
+          {
+            "name": "src/main/java/entity/menu/MenuRecipe.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/menu/MenuRecipe.java"
+          },
+          {
+            "name": "src/main/java/entity/orders/Order.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/orders/Order.java"
+          },
+          {
+            "name": "src/main/java/entity/orders/OrderItem.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/orders/OrderItem.java"
+          },
+          {
+            "name": "src/main/java/entity/Role.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/Role.java"
+          },
+          {
+            "name": "src/main/java/entity/User.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/entity/User.java"
+          },
+          {
+            "name": "src/main/java/exception/ErrorDetails.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/exception/ErrorDetails.java"
+          },
+          {
+            "name": "src/main/java/exception/ErrorResponse.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/exception/ErrorResponse.java"
+          },
+          {
+            "name": "src/main/java/exception/GeneralErrorException.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/exception/GeneralErrorException.java"
+          },
+          {
+            "name": "src/main/java/exception/GlobalExceptionHandler.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/exception/GlobalExceptionHandler.java"
+          },
+          {
+            "name": "src/main/java/exception/ResourceNotFoundException.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/exception/ResourceNotFoundException.java"
+          },
+          {
+            "name": "src/main/java/exception/WolfCafeAPIException.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/exception/WolfCafeAPIException.java"
+          },
+          {
+            "name": "src/main/java/repositories/inventory/IngredientRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/inventory/IngredientRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/inventory/InventoryItemRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/inventory/InventoryItemRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/inventory/InventoryRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/inventory/InventoryRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/inventory/ItemRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/inventory/ItemRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/inventory/RecipeRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/inventory/RecipeRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/LocationRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/LocationRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/menu/MenuItemRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/menu/MenuItemRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/menu/MenuRecipeRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/menu/MenuRecipeRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/menu/MenuRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/menu/MenuRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/orders/OrderItemRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/orders/OrderItemRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/orders/OrderRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/orders/OrderRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/RoleRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/RoleRepository.java"
+          },
+          {
+            "name": "src/main/java/repositories/UserRepository.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/repositories/UserRepository.java"
+          },
+          {
+            "name": "src/main/java/security/CustomUserDetailsService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/security/CustomUserDetailsService.java"
+          },
+          {
+            "name": "src/main/java/security/JwtAuthenticationEntryPoint.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/security/JwtAuthenticationEntryPoint.java"
+          },
+          {
+            "name": "src/main/java/security/JwtAuthenticationFilter.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/security/JwtAuthenticationFilter.java"
+          },
+          {
+            "name": "src/main/java/security/JwtTokenProvider.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/security/JwtTokenProvider.java"
+          },
+          {
+            "name": "src/main/java/service/AuthService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/AuthService.java"
+          },
+          {
+            "name": "src/main/java/service/impl/AuthServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/AuthServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/IngredientServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/IngredientServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/InventoryServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/InventoryServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/ItemServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/ItemServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/LocationServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/LocationServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/MenuServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/MenuServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/OrderServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/OrderServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/RecipeServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/RecipeServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/impl/UserServiceImpl.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/impl/UserServiceImpl.java"
+          },
+          {
+            "name": "src/main/java/service/IngredientService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/IngredientService.java"
+          },
+          {
+            "name": "src/main/java/service/InventoryService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/InventoryService.java"
+          },
+          {
+            "name": "src/main/java/service/ItemService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/ItemService.java"
+          },
+          {
+            "name": "src/main/java/service/LocationService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/LocationService.java"
+          },
+          {
+            "name": "src/main/java/service/MenuService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/MenuService.java"
+          },
+          {
+            "name": "src/main/java/service/OrderService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/OrderService.java"
+          },
+          {
+            "name": "src/main/java/service/RecipeService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/RecipeService.java"
+          },
+          {
+            "name": "src/main/java/service/UserService.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/service/UserService.java"
+          },
+          {
+            "name": "src/main/java/WolfCafeApplication.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/main/java/edu/ncsu/csc326/wolfcafe/WolfCafeApplication.java"
+          },
+          {
+            "name": "src/test/java/config/SetupDataLoaderTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/config/SetupDataLoaderTest.java"
+          },
+          {
+            "name": "src/test/java/controller/AuthControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/AuthControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/DocumentControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/DocumentControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/IngredientControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/IngredientControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/InventoryControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/InventoryControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/ItemControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/ItemControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/LocationControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/LocationControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/MenuControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/MenuControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/OrderControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/OrderControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/RecipeControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/RecipeControllerTest.java"
+          },
+          {
+            "name": "src/test/java/controller/UserControllerTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/controller/UserControllerTest.java"
+          },
+          {
+            "name": "src/test/java/DatabaseCleanupUtil.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/DatabaseCleanupUtil.java"
+          },
+          {
+            "name": "src/test/java/repositories/IngredientRepositoryTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/repositories/IngredientRepositoryTest.java"
+          },
+          {
+            "name": "src/test/java/repositories/InventoryRepositoryTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/repositories/InventoryRepositoryTest.java"
+          },
+          {
+            "name": "src/test/java/repositories/LocationRepositoryTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/repositories/LocationRepositoryTest.java"
+          },
+          {
+            "name": "src/test/java/repositories/OrderItemRepositoryTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/repositories/OrderItemRepositoryTest.java"
+          },
+          {
+            "name": "src/test/java/repositories/OrderRepositoryTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/repositories/OrderRepositoryTest.java"
+          },
+          {
+            "name": "src/test/java/repositories/RecipeRepositoryTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/repositories/RecipeRepositoryTest.java"
+          },
+          {
+            "name": "src/test/java/services/AuthServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/AuthServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/IngredientServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/IngredientServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/InventoryServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/InventoryServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/ItemServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/ItemServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/LocationServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/LocationServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/MenuServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/MenuServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/OrderServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/OrderServiceTest.java"
+          },
+          {
+            "name": "src/test/java/services/RecipeServiceTest.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/services/RecipeServiceTest.java"
+          },
+          {
+            "name": "src/test/java/TestUtils.java",
+            "path": "/projects/JavaFullStack/wolf-cafe-backend/src/test/java/edu/ncsu/csc326/wolfcafe/TestUtils.java"
+          },
+          {
+            "name": "babel.config.json",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/babel.config.json"
+          },
+          {
+            "name": "index.html",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/index.html"
+          },
+          {
+            "name": "package-lock.json",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/package-lock.json"
+          },
+          {
+            "name": "package.json",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/package.json"
+          },
+          {
+            "name": "README.md",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/README.md"
+          },
+          {
+            "name": "src/App.css",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/App.css"
+          },
+          {
+            "name": "src/App.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/App.jsx"
+          },
+          {
+            "name": "src/components/CreateStaffComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/CreateStaffComponent.jsx"
+          },
+          {
+            "name": "src/components/CustomerComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/CustomerComponent.jsx"
+          },
+          {
+            "name": "src/components/DevelopersGuide.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/DevelopersGuide.jsx"
+          },
+          {
+            "name": "src/components/EditUserComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/EditUserComponent.jsx"
+          },
+          {
+            "name": "src/components/FooterComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/FooterComponent.jsx"
+          },
+          {
+            "name": "src/components/HeaderComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/HeaderComponent.jsx"
+          },
+          {
+            "name": "src/components/HumanFlourishing.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/HumanFlourishing.jsx"
+          },
+          {
+            "name": "src/components/IngredientComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/IngredientComponent.jsx"
+          },
+          {
+            "name": "src/components/InventoryComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/InventoryComponent.jsx"
+          },
+          {
+            "name": "src/components/ItemComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ItemComponent.jsx"
+          },
+          {
+            "name": "src/components/ListIngredientsComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ListIngredientsComponent.jsx"
+          },
+          {
+            "name": "src/components/ListInventoryComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ListInventoryComponent.jsx"
+          },
+          {
+            "name": "src/components/ListItemsComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ListItemsComponent.jsx"
+          },
+          {
+            "name": "src/components/ListRecipesComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ListRecipesComponent.jsx"
+          },
+          {
+            "name": "src/components/LocationComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/LocationComponent.jsx"
+          },
+          {
+            "name": "src/components/LoginComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/LoginComponent.jsx"
+          },
+          {
+            "name": "src/components/ManageMenuComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ManageMenuComponent.jsx"
+          },
+          {
+            "name": "src/components/MarkdownDisplay.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/MarkdownDisplay.jsx"
+          },
+          {
+            "name": "src/components/MenuComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/MenuComponent.jsx"
+          },
+          {
+            "name": "src/components/ModifyRecipeComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ModifyRecipeComponent.jsx"
+          },
+          {
+            "name": "src/components/OrderCustomerComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrderCustomerComponent.jsx"
+          },
+          {
+            "name": "src/components/OrderCustomerGuestComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrderCustomerGuestComponent.jsx"
+          },
+          {
+            "name": "src/components/OrderHistoryComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrderHistoryComponent.jsx"
+          },
+          {
+            "name": "src/components/OrderHistoryForStaffComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrderHistoryForStaffComponent.jsx"
+          },
+          {
+            "name": "src/components/OrderPickupComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrderPickupComponent.jsx"
+          },
+          {
+            "name": "src/components/OrderPickupGuestComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrderPickupGuestComponent.jsx"
+          },
+          {
+            "name": "src/components/OrdersComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/OrdersComponent.jsx"
+          },
+          {
+            "name": "src/components/PrivacyPolicy.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/PrivacyPolicy.jsx"
+          },
+          {
+            "name": "src/components/RecipeComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/RecipeComponent.jsx"
+          },
+          {
+            "name": "src/components/RegisterComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/RegisterComponent.jsx"
+          },
+          {
+            "name": "src/components/UnauthorizedPage.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/UnauthorizedPage.jsx"
+          },
+          {
+            "name": "src/components/UserGuide.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/UserGuide.jsx"
+          },
+          {
+            "name": "src/components/ViewUserComponent.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/components/ViewUserComponent.jsx"
+          },
+          {
+            "name": "src/index.css",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/index.css"
+          },
+          {
+            "name": "src/main.jsx",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/main.jsx"
+          },
+          {
+            "name": "src/MarkdownContent.css",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/MarkdownContent.css"
+          },
+          {
+            "name": "src/services/AuthService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/AuthService.js"
+          },
+          {
+            "name": "src/services/documentService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/documentService.js"
+          },
+          {
+            "name": "src/services/IngredientService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/IngredientService.js"
+          },
+          {
+            "name": "src/services/InventoryService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/InventoryService.js"
+          },
+          {
+            "name": "src/services/ItemService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/ItemService.js"
+          },
+          {
+            "name": "src/services/LocationService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/LocationService.js"
+          },
+          {
+            "name": "src/services/MakeRecipeService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/MakeRecipeService.js"
+          },
+          {
+            "name": "src/services/MenuService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/MenuService.js"
+          },
+          {
+            "name": "src/services/OrdersService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/OrdersService.js"
+          },
+          {
+            "name": "src/services/RecipesService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/RecipesService.js"
+          },
+          {
+            "name": "src/services/UserService.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/services/UserService.js"
+          },
+          {
+            "name": "src/_test_/IngredientComponent.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/IngredientComponent.test.js"
+          },
+          {
+            "name": "src/_test_/Items.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/Items.test.js"
+          },
+          {
+            "name": "src/_test_/ListIngredientComponent.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/ListIngredientComponent.test.js"
+          },
+          {
+            "name": "src/_test_/ListInventory.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/ListInventory.test.js"
+          },
+          {
+            "name": "src/_test_/ListItems.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/ListItems.test.js"
+          },
+          {
+            "name": "src/_test_/LocationComponent.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/LocationComponent.test.js"
+          },
+          {
+            "name": "src/_test_/LogIn.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/LogIn.test.js"
+          },
+          {
+            "name": "src/_test_/Menu.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/Menu.test.js"
+          },
+          {
+            "name": "src/_test_/OrderHistory.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/OrderHistory.test.js"
+          },
+          {
+            "name": "src/_test_/Recipe.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/Recipe.test.js"
+          },
+          {
+            "name": "src/_test_/Register.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/Register.test.js"
+          },
+          {
+            "name": "src/_test_/ViewUsers.test.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/src/_test_/ViewUsers.test.js"
+          },
+          {
+            "name": "vite.config.js",
+            "path": "/projects/JavaFullStack/wolf-cafe-frontend/vite.config.js"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "collection": "Node-Progression",
     "projects": [
       {

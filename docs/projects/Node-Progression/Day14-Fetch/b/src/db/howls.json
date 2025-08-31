@@ -1,0 +1,30 @@
+[
+  {
+    "user": "@student",
+    "message": "This is a sample howl. #example"
+  },
+  {
+    "user": "@graduate",
+    "message": "Another sample howl for the feed!"
+  },
+  {
+    "user": "@student",
+    "message": "This is a sample howl. #example"
+  },
+  {
+    "user": "@faculty",
+    "message": "This is a sample howl. #example"
+  },
+  {
+    "user": "@student",
+    "message": "This is a sample howl. #example"
+  },
+  {
+    "user": "@graduate",
+    "message": "This is a sample howl. #example"
+  },
+  {
+    "user": "@graduate",
+    "message": "Yet another howl to showcase the feed layout."
+  }
+]

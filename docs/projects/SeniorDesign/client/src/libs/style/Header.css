@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Slab:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.top-ribbon {
+    box-sizing: border-box;
+    display: flex;
+    background-color: #333333;
+    margin-top: -15px;
+    margin-left: -8px;
+    margin-right: -8px;
+    height:50px;
+    width:100%;
+    font-family: "Roboto";
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+}
+
+.user-tag {
+    margin-top: 20px;
+    height: 100%;
+}
+
+.left-div {
+    width: 50%;
+}
+
+.right-div {
+    text-align: right;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#brick {
+    margin-left: 30px;
+    padding-top: 17px;
+    width: 140px;
+    padding-right: 90%;
+}
+
+.home-button {
+    width: 27px;
+    height: 25px;
+    padding-top: 19px;
+    color: red;
+    text-decoration: none;
+}
+
+.home-link {
+    align-self: right;
+    /* padding-top: 17px;
+    margin-top: 20px; */
+    padding-right: 5px;
+}
+
+.user-menu {
+    align-self: right;
+    /* padding-top: 17px;
+    margin-top: 20px; */
+    margin-right: 5px;
+    text-decoration: none;
+    color: white;
+    width: 27px;
+    height: 25px;
+}

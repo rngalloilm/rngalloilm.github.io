@@ -1,0 +1,14 @@
+form {
+  background-color: #EEE;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+form h2 {
+  margin-top: 0;
+}

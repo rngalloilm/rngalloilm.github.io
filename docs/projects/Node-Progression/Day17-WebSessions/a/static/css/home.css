@@ -1,0 +1,100 @@
+/* ====================== Map ====================== */
+#map {
+  width: 100%;
+  background-color: #ccc;
+}
+
+#map img {
+  width: 100%;
+}
+
+.filter-options {
+  width: 100%;
+  background-color: #3397DB;
+  align-items: center;
+  padding: 10px;
+}
+.filter-options h2 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0 20px;
+}
+.filter-options select {
+  background-color: white;
+  border: 1px solid #fff;
+  font-family: Arial,sans-serif;
+  font-size: 11pt;
+  height: 35px;
+  letter-spacing: 0;
+  margin: 10px;
+  padding: 0 10px;
+  width: 200px;
+}
+
+/* ====================== Park Listing ====================== */
+#parks-list {
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.park {
+  display: block;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-family: Arial,sans-serif;
+  margin: 10px;
+  min-height: 280px;
+  padding: 20px;
+  text-align: left;
+  width: 270px;
+  border-radius: 5px;
+  color: black;
+}
+
+.park:hover {
+  box-shadow: 3px 3px 10px 0px #000000;
+  color: black;
+}
+
+.park img {
+  background-color: #ccc;
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  min-height: 150px;
+  min-width: 100%;
+}
+
+.park h2 {
+  background-color: orange;
+  border-bottom: 3px solid #eee;
+  color: #fff;
+  font-size: 10pt;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  height: 55px;
+}
+
+.park .counties-list {
+  font-size: 1.3em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.park .county {
+  background-color: #3397DB;
+  color: white;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 3px;
+  display: inline-block;
+}

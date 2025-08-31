@@ -1,0 +1,82 @@
+/* Login Page Scoped */
+.login-page {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #E9E9DD;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Title */
+.login-title {
+  color: #164437;
+  text-align: center;
+  margin: 2em;
+}
+
+/* Form */
+.login-form-container {
+  width: 70%;
+  text-align: center;
+  margin: 2em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input,
+.login-form label {
+  margin: 1em;
+  border: 1px solid black;
+  font-size: 1em;
+}
+
+.login-form label {
+  background-color: #164437;
+  color: white;
+  padding: 1em;
+  border-radius: 20px;
+}
+
+#submit {
+  display: none;
+}
+
+/* New User Section */
+.login-new-user-container {
+  text-align: center;
+}
+
+.login-new-user {
+  background-color: #164437;
+  color: white;
+  padding: 1em;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Policies */
+.login-policies {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.login-policies a {
+  color: #164437;
+  text-decoration: none;
+}
+
+.login-policies a:hover {
+  text-decoration: underline;
+}
