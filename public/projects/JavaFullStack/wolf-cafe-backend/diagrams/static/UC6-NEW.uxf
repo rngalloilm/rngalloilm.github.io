@@ -1,0 +1,114 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>420</y><w>530</w><h>80</h></coordinates><panel_attributes>MakeOrderController
+--
+--
++makeOrder(items: Items, amtPaid: Integer): ResponseEntity&lt;Map&lt;String, Object&gt;&gt;
+-makeItem(toPurchase: ItemDto, amtPaid: int): int
+-makeItem(toPurchase: RecipeDto, amtPaid: int): int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>380</y><w>580</w><h>210</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.controller
+--
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1470</x><y>10</y><w>1220</w><h>140</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.repositories
+--
+
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1680</x><y>50</y><w>150</w><h>40</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+InventoryRepository</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1840</x><y>50</y><w>300</w><h>70</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+IngredientRepository
+--
+--
++findByName(name:String): Optional&lt;Ingredient&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2150</x><y>50</y><w>270</w><h>70</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+RecipeRepository
+--
+--
++findByName(name:String): Optional&lt;Recipe&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2430</x><y>50</y><w>150</w><h>40</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+InventoryItemRepository</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>800</x><y>360</y><w>430</w><h>480</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.service
+--
+
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>470</y><w>390</w><h>110</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+InventoryService
+--
+--
+/+createInventory(inventoryDto:InventoryDto):InventoryDto/
+/+getInventory():InventoryDto/
+/+updateInventory(inventoryDto:InventoryDto):InventoryDto/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>400</y><w>390</w><h>60</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+MakeRecipeService
+--
+--
+/+makeRecipe(inventoryDto:InventoryDto, recipeDto:RecipeDto):boolean/
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2100</x><y>390</y><w>390</w><h>110</h></coordinates><panel_attributes>InventoryServiceImpl
+--
+--
++createInventory(inventoryDto:InventoryDto):InventoryDto
++getInventory():InventoryDto
++updateInventory(inventoryDto:InventoryDto):InventoryDto
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1270</x><y>350</y><w>390</w><h>60</h></coordinates><panel_attributes>MakeRecipeServiceImpl
+--
+--
++makeRecipe(inventoryDto:InventoryDto, recipeDto:RecipeDto):boolean
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1250</x><y>320</y><w>1250</w><h>200</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.service.impl
+--
+
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>590</y><w>390</w><h>150</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+RecipeService
+--
+--
+/+createRecipe(recipeDto:RecipeDto):RecipeDto/
+/+getRecipeById(recipeId:Long):RecipeDto/
+/+getRecipeByName(recipeName:String):RecipeDto/
+/+isDuplicateName(recipeName:String):boolean/
+/+getAllRecipes():List&lt;RecipeDto&gt;/
+/+updateRecipe(recipeId:Long, recipeDto:RecipeDto):RecipeDto/
+/+deleteRecipe(recipeId:Long):void/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>460</y><w>300</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+-inventoryService</panel_attributes><additional_attributes>280;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>480</y><w>300</w><h>180</h></coordinates><panel_attributes>lt=&lt;-
+-recipeService</panel_attributes><additional_attributes>280;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>440</y><w>300</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
+-makeRecipeController</panel_attributes><additional_attributes>280;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>490</y><w>780</w><h>150</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>760;10;760;130;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>490</y><w>1140</w><h>100</h></coordinates><panel_attributes>lt=.&gt;&gt;</panel_attributes><additional_attributes>1120;10;1120;80;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>400</y><w>130</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;50;40;50;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1800</x><y>80</y><w>320</w><h>370</h></coordinates><panel_attributes>lt=-&gt;
+-inventoryRepository</panel_attributes><additional_attributes>300;350;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2100</x><y>110</y><w>170</w><h>300</h></coordinates><panel_attributes>lt=-&gt;
+-ingredientRepository</panel_attributes><additional_attributes>40;280;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1630</x><y>80</y><w>210</w><h>290</h></coordinates><panel_attributes>lt=-&gt;
+-inventoryRepository</panel_attributes><additional_attributes>10;270;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1650</x><y>110</y><w>540</w><h>290</h></coordinates><panel_attributes>lt=-&gt;
+-recipeRepository</panel_attributes><additional_attributes>10;270;520;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1850</x><y>110</y><w>400</w><h>260</h></coordinates><panel_attributes>lt=-&gt;
+-recipeRepository</panel_attributes><additional_attributes>10;240;380;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1740</x><y>110</y><w>350</w><h>260</h></coordinates><panel_attributes>lt=-&gt;
+-ingredientRepository</panel_attributes><additional_attributes>10;240;330;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2260</x><y>80</y><w>310</w><h>330</h></coordinates><panel_attributes>lt=-&gt;
+-inventoryItemRepository</panel_attributes><additional_attributes>10;310;290;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1690</x><y>350</y><w>390</w><h>150</h></coordinates><panel_attributes>RecipeServiceImpl
+--
+--
++createRecipe(recipeDto:RecipeDto):RecipeDto
++getRecipeById(recipeId:Long):RecipeDto
++getRecipeByName(recipeName:String):RecipeDto
++isDuplicateName(recipeName:String):boolean
++getAllRecipes():List&lt;RecipeDto&gt;
++updateRecipe(recipeId:Long, recipeDto:RecipeDto):RecipeDto
++deleteRecipe(recipeId:Long):void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>510</y><w>530</w><h>50</h></coordinates><panel_attributes>FulfillOrderController
+--
+--
++fulfillOrder(id: Long): bool
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1510</x><y>50</y><w>150</w><h>40</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+OrderRepository</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1430</x><y>80</y><w>190</w><h>290</h></coordinates><panel_attributes>lt=-&gt;
+-orderRepository</panel_attributes><additional_attributes>10;270;140;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>820</x><y>760</y><w>390</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+FulfillOrderService
+--
+--
++fulfillOrder(id: Long): bool
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1270</x><y>430</y><w>390</w><h>50</h></coordinates><panel_attributes>FulfillOrderServiceImpl
+--
+--
++fulfillOrder(id: Long): bool
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>470</y><w>190</w><h>340</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;320;40;320;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1210</x><y>80</y><w>340</w><h>370</h></coordinates><panel_attributes>lt=-&gt;
+-orderRepository</panel_attributes><additional_attributes>70;350;10;270;70;100;320;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1540</x><y>80</y><w>280</w><h>370</h></coordinates><panel_attributes>lt=-&gt;
+-orderRepository</panel_attributes><additional_attributes>10;350;130;330;150;180;260;10</additional_attributes></element></diagram>

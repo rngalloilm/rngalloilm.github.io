@@ -1,0 +1,26 @@
+The WolfCafe food ordering and pickup platform seeks to offer its users a convenient platform for ordering food. Wolfcafe is focused on maximizing the positive impact that it has on the flourishing of its end users while seeking to minimize any negative impact that it has on users, staff members, and non-users who interact with the system. This statement seeks to explore its impact on these groups through the five domains of human flourishing: happiness and life satisfaction, mental and physical health, meaning and purpose, character and virtue, and close social relationships.
+
+## HAPPINESS AND LIFE SATISFACTION
+For users: This app seeks to enhance the happiness and satisfaction of customers who decide to use this app by streamlining the order process and offering a convenient way to order and pickup food. Some of the benefits of this app include reducing the wait times of customers who would otherwise order and pickup food in person and assisting customers who may not feel as comfortable with human interaction in their order process.
+For non-users: This app does not seek to replace in-person ordering and is designed in such a way that non-users will ultimately benefit from shorter in-person wait times due to some customers moving order to online ordering; however, there is the potential for dissatisfaction if non-users feel that customers who order online are given preferential treatement or if non-users do not have the technological literacy or ability to use the app.
+For staff: This app seeks to enhance staff satisfaction by reducing the number of people ordering in person, which reduces rush hour traffic in turn reducing the stress on staff as they have more time per order on average. However, if the system is overloaded with orders this has the potential to frustrate staff. Having orders arranged in a queue can help mitigate this issue.
+
+## MENTAL AND PHYSICAL HEALTH
+For users: For users who have busy schedules, the ability to make a large cut in the amount of time it takes to place and pickup food is a beneficial service. However, if this system were to cause the user to become overdependent on this app, that would be a detriment to their health as they might not be eating the diverse array of food recommended by doctors.
+For non-users: For non-users, depending on how online vs. in person orders are prioritized, they may feel frustration at being out of the loop. To prevent this, in person orders should be prioritized at least as much as online orders.
+For staff: If implementation of this app leads to a long-term surge of traffic towards the location, especially during rush hour, they may feel overwhelmed and their mental/physical health may take a downturn. To prevent this, orders should be taken when staff is ready to handle them to prevent drop in quality or staff frustration.
+
+ ## MEANING AND PURPOSE
+For users: This app is not directly designed to influence the user’s sense of meaning and purpose; however, increasing the amount of free time the user has will likely give them more time to find these things.
+For non-users: Non-users may find purpose in the human interaction they receive when placing an order. Wolfcafe is designed to work in tandem with existing systems, so this should remain largely unaffected.
+For staff: For staff who have vested interest in the success of the business, if the convenience of ordering food without wait times leads to more customers this may lead ot an increased sense of purpose. However, for staff who thrive off of personal interaction, they may see the move to digitization as depriving them of purpose.
+
+## CHARACTER AND VIRTUE
+For users: Utilizing digital receipts has a positive impact on the environment and having access to a list of previous orders encourages transparency between users and the restaurant.
+For non-users: Exercising the non-users’ ability to order in person may be seen as the non-user valuing in-person interaction over convenience, which Wolfcafe is not intending to hinder or replace.
+For staff: Wolfcafe’s implementation can be perceived as a commitment to the satisfaction of the customer; however, it also has the potential to be seen as a way to dehumanize customers by removing the face to face interaction that in-person ordering provides.
+
+## CLOSE SOCIAL RELATIONSHIPS
+For users: For users of this app who were previously ordering in person, the use of online ordering may reduce the social interaction during the process of ordering food. However, it does provide users increased time to focus on other social interactions in their personal life outside of transactions.
+For non-users: A move to digitization may be seen by non-users(especially those who are regulars) as a move to remove in-person relationships with staff; however, Wolfcafe is designed to work in tandem with existing in-person ordering and not meant to reduce any human interaction.
+For staff: Depending on how many regular customers switch to online ordering, the staff may see it as removing some of the social aspect of their job, but it is plausible that many regular customers will continue to order in person.

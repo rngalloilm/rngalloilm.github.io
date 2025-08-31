@@ -1,0 +1,47 @@
+title WolfCafe: Authentication Flow UC7
+
+Frontend->AuthController: register(registerDto: RegisterDto)
+AuthController->AuthService: register(registerDto: RegisterDto)
+AuthService->UserRepository: existsByEmail(registerDto.email)
+
+alt Email already exists
+    UserRepository-->AuthService: true
+    AuthService-->AuthController: ResponseEntity<"Email already exists">
+    AuthController->Frontend: ResponseEntity<"Email already exists">
+else Email does not exist
+    UserRepository-->AuthService: false
+    AuthService->RoleRepository: findByName("ROLE_CUSTOMER")
+    RoleRepository-->AuthService: Role
+    AuthService->UserRepository: save(newUser)
+    UserRepository-->AuthService: User
+    AuthService-->AuthController: ResponseEntity<"Registration Successful">
+    AuthController->Frontend: ResponseEntity<"Registration Successful">
+end
+
+Frontend->AuthController: login(loginDto: LoginDto)
+AuthController->AuthService: login(loginDto: LoginDto)
+AuthService->UserRepository: findByUsernameOrEmail(loginDto.usernameOrEmail)
+
+alt User not found
+    UserRepository-->AuthService: null
+    AuthService-->AuthController: ResponseEntity<"Invalid credentials">
+    AuthController->Frontend: ResponseEntity<"Invalid credentials">
+else User found
+    UserRepository-->AuthService: User
+    AuthService-->AuthController: ResponseEntity<JwtAuthResponse>
+    AuthController->Frontend: ResponseEntity<JwtAuthResponse>
+end
+
+Frontend->AuthController: deleteUser(id: Long)
+AuthController->AuthService: deleteUserById(id: Long)
+AuthService->UserRepository: removeById(id: Long)
+
+alt User does not exist
+    UserRepository-->AuthService: null
+    AuthService-->AuthController: ResponseEntity<"User not found">
+    AuthController->Frontend: ResponseEntity<"User not found">
+else User exists
+    UserRepository-->AuthService: void
+    AuthService-->AuthController: ResponseEntity<"User Deleted">
+    AuthController->Frontend: ResponseEntity<"User Deleted">
+end

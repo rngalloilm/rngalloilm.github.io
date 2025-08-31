@@ -1,0 +1,48 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><element><id>UMLClass</id><coordinates><x>28</x><y>224</y><w>742</w><h>154</h></coordinates><panel_attributes>ItemController
+--
+--
++addItem(itemDto: ItemDto): ResponseEntity&lt;ItemDto&gt;
++getItem(id: Long): ResponseEntity&lt;ItemDto&gt;
++getAllItems(): ResponseEntity&lt;List&lt;ItemDto&gt; &gt;
++updateItem(id: Long, itemDto: ItemDto): ResponseEntity&lt;ItemDto&gt;
++deleteItem(id: Long): ResponseEntity&lt;String&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>182</y><w>812</w><h>224</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.controller
+--
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>1120</x><y>112</y><w>602</w><h>658</h></coordinates><panel_attributes>edu.ncsu.csc326.wolfcafe.service
+--
+
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1148</x><y>364</y><w>546</w><h>154</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+InventoryService
+--
+--
+/+createInventory(inventoryDto:InventoryDto):InventoryDto/
+/+getInventory():InventoryDto/
+/+updateInventory(inventoryDto:InventoryDto):InventoryDto/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1148</x><y>168</y><w>546</w><h>182</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+ItemService
+--
+--
+/+addItem(itemDto: ItemDto): ItemDto/
+/+getItem(id: Long): ItemDto/
+/+getAllItems(): List&lt;ItemDto&gt;/
+/+updateItem(id: Long, itemDto: ItemDto): ItemDto/
+/+DeleteItem(id: Long)/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>756</x><y>294</y><w>420</w><h>126</h></coordinates><panel_attributes>lt=&lt;-
+-inventoryService</panel_attributes><additional_attributes>280;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>756</x><y>168</y><w>420</w><h>154</h></coordinates><panel_attributes>lt=&lt;-
+-itemService</panel_attributes><additional_attributes>280;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1148</x><y>532</y><w>546</w><h>210</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+RecipeService
+--
+--
+/+createRecipe(recipeDto:RecipeDto):RecipeDto/
+/+getRecipeById(recipeId:Long):RecipeDto/
+/+getRecipeByName(recipeName:String):RecipeDto/
+/+isDuplicateName(recipeName:String):boolean/
+/+getAllRecipes():List&lt;RecipeDto&gt;/
+/+updateRecipe(recipeId:Long, recipeDto:RecipeDto):RecipeDto/
+/+deleteRecipe(recipeId:Long):void/
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>756</x><y>336</y><w>420</w><h>266</h></coordinates><panel_attributes>lt=&lt;-
+-recipeService</panel_attributes><additional_attributes>280;170;10;10</additional_attributes></element></diagram>
