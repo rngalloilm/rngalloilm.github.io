@@ -28,18 +28,33 @@
   }
   
   .resume-viewer {
-    width: 100%;
-    max-width: 850px; /* Standard paper width for large screens */
-    height: 1100px; /* Standard paper height */
+    width: 100%; /* Make it take full width on smaller screens */
+    max-width: 850px; /* Keep max-width for large screens */
+    height: 1100px; /* Default height for large screens */
     background-color: #555; /* Placeholder color while PDF loads */
     border-radius: 5px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
   }
   
-  /* MODIFIED: Changed selector from .resume-pdf-object to .resume-iframe */
   .resume-iframe {
     width: 100%;
     height: 100%;
     border-radius: 5px;
     border: none;
+  }
+
+  /* Mobile specific styles for resume viewer */
+  @media (max-width: 768px) {
+    .resume-viewer {
+      height: 80vh; /* Adjust height for mobile, e.g., 80% of viewport height */
+      width: 95%; /* Give some padding on the sides */
+    }
+
+    .resume-title {
+      font-size: 2em; /* Smaller title on mobile */
+    }
+
+    .resume-download-link {
+      font-size: 0.9em; /* Smaller link text on mobile */
+    }
   }

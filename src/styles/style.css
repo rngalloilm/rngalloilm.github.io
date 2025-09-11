@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
     font-family: Georgia, sans-serif;
     margin: 0; /* Remove default body margin */
@@ -31,4 +30,32 @@ h1 {
 h3 {
     text-align: center;
     color: rgb(255, 255, 255);
+}
+
+/* New styles for mobile responsiveness */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column; /* Stack layout for mobile */
+  }
+
+  .content-area {
+    margin-left: 0; /* Remove margin on mobile */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  /* Overlay to darken content when nav is open */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Below navbar, above content */
+  }
+
+  /* Adjust body or content to prevent scrolling when nav is open */
+  body.no-scroll {
+    overflow: hidden;
+  }
 }
