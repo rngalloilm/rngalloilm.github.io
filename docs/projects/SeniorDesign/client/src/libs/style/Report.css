@@ -1,0 +1,87 @@
+
+
+.content-div-report {
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: #990100;
+  padding: 2px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.content-div-report h1 {
+  margin-left: 20px;
+}
+
+.param {
+  font-size: 12pt;
+}
+
+.pdf-div {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  flex-direction: column;
+  width: 80%;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+}
+
+.h3-report {
+  background-color: #dedede;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.info-box {
+  text-align: left;
+  width: 75%;
+}
+
+.info-box h2 {
+  color: black;
+}
+
+.qr-box img {
+  margin: auto;
+  margin-top: 20px;
+  border: 3px solid #dedede;
+  border-radius: 10px;
+  padding: 0px;
+  width: 250px;
+  height: 250px;
+}
+
+.button-div-report {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#pdf-button {
+  font: "Roboto";
+  padding: 4px;
+  margin: 15px;
+  background-color: #990100;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-size: 12pt;
+  transition-duration: 300ms;
+  font-weight: bold;
+  width: 10%;
+  border-radius: 5px;
+}
+
+#pdf-button:hover {
+  background-color: white;
+  color: #990100;
+  transition-duration: 300ms;
+  cursor: pointer;
+}

@@ -1,0 +1,85 @@
+
+#breadcrumb {
+  padding: 10px 40px 16px;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 0;
+}
+
+/* Display list items side by side */
+#breadcrumb li {
+  display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+#breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+#breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+#breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* ====================== Restaurant Details ====================== */
+
+#map-container {
+  background: blue none repeat scroll 0 0;
+  height: 500px;
+}
+#map {
+  background-color: #ccc;
+  height: 100%;
+  width: 100%;
+}
+
+
+#park-container {
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;
+  padding: 30px;
+  font-size: 2em;
+}
+
+#park-container h1 {
+  font-size: 32pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  margin: 0 0 30px;
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+
+#park-container h2 {
+  font-size: 24pt;
+  font-weight: 200;
+  letter-spacing: 0;
+  margin: 15px 0 30px;
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+
+#park-container img {
+	width: 100%;
+}
+
+
+#park-container .county {
+  background-color: #3397DB;
+  color: white;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 3px;
+  display: inline-block;
+}
+

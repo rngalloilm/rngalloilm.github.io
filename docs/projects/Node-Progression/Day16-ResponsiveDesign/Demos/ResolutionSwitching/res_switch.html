@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolution Switching - Responsive Images</title>
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<body>
+
+  <div class="fullWidth red">
+    <h1>Squirrel</h1>
+    <img src="img/squirrel-640w.jpg"
+      srcset="img/squirrel-640w.jpg 640w, img/squirrel-1280w.jpg 1280w, img/squirrel-1920w.jpg 1920w"
+      sizes="(max-width: 500px) 400px, (max-width: 800px) 700px, (min-width: 801px) 1500px, 400px"
+      >
+  </div>
+
+  <div class="halfWidth orange">
+    <h1>Chipmunk</h1>
+    <img src="img/chipmunk-640w.jpg"
+      srcset="img/chipmunk-640w.jpg 640w, img/chipmunk-1280w.jpg 1280w, img/chipmunk-1920w.jpg 1920w"
+      sizes="(max-width: 500px) 200px, (max-width: 800px) 350px, (min-width: 801px) 650px, 200px">
+  </div>
+
+</body>
+</html>

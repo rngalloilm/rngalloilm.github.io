@@ -1,0 +1,25 @@
+title Log in and out
+
+actor User
+participant LoginPage
+participant AuthController
+participant UserService
+participant UserRepository
+participant HomePage
+
+User -> LoginPage: Enter username/email and password
+LoginPage -> AuthController: login(LoginDto)
+AuthController -> UserService: loginUser(LoginDto)
+UserService -> UserRepository: findByUsername(String username)
+UserRepository --> UserService: Optional<User>
+UserService --> AuthController: String
+AuthController --> LoginPage: ResponseEntity<String>
+LoginPage -> HomePage: Redirect to HomePage
+
+User -> HomePage: Navigate through the website
+User -> HomePage: Select "Log Out"
+HomePage -> AuthController: logout()
+AuthController -> UserService: logoutUser()
+UserService --> AuthController: void
+AuthController -> LoginPage: ResponseEntity<String>
+LoginPage -> User: Display Login Page

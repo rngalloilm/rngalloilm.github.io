@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #1f5d81;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  grid-area: header;
+  background-color: #990000;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 24px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header label {
+  font-size: 1rem;
+}
+
+main {
+  display: grid;
+  grid-template-areas: "nav input"
+                       "nav howls";
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+/********** BACK TO TOP **********/
+
+#top {
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  background-color: #990000;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/********** NAVIGATION **********/
+
+nav.container {
+  grid-area: nav;
+  width: 200px;
+  flex-grow: 0;
+  padding: 10px;
+  max-height: 250px;
+
+  /* Bonus */
+  position: sticky;
+  top: 68px;
+  /* End Bonus */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  padding: 10px 5px;
+  border-bottom: 1px solid #666;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  background-color: #f5f8fa;
+}
+
+nav ul li:last-of-type {
+  border-bottom: none;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/********** INPUT **********/
+
+#howlInput {
+  width: 100%;
+  grid-area: input;
+  display: flex;
+  flex-direction: column;
+}
+
+#howlInput textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: none;
+}
+
+#howlInput button {
+  align-self: flex-end;
+  background-color: #f5f8fa;
+  border: 2px solid #990000;
+  color: #990000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+/********** HOWLS **********/
+
+#howlList {
+  grid-area: howls;
+  width: 100%;
+}
+
+.howl {
+  margin-bottom: 10px;
+}
+
+.howl:last-child {
+  margin-bottom: 0;
+}
+
+.howl .user {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.howl .content {
+  margin-bottom: 10px;
+}
+
+.howl .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 0.85em;
+}
+
+
+/********** FOOTER **********/
+
+footer {
+  border-top: 2px solid #990000;
+  background-color: white;
+  padding: 10px 20px;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+}

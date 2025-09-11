@@ -1,0 +1,35 @@
+
+body {
+    background-size: stretch;
+    background-image: url("../src/libs/images/pine-wallpaper.jpg");
+    background-repeat: no-repeat;
+    overflow: none;
+    width: 100%;
+}
+
+html {
+    width: 100vw;
+    overflow: none;
+}
+
+#root {
+    overflow: none;
+    width: 100%;
+}
+
+body {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+/* .roots-ncsu-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+} */

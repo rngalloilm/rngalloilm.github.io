@@ -1,0 +1,28 @@
+div.button-div > button{
+    font: "Roboto";
+    padding: 10px;
+    margin-top: 10px;
+    width: 90%;
+    background-color: #990100;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    font-size: 12pt;
+    transition-duration: 300ms;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+div.button-div > button:hover{
+    background-color: white;
+    color:#990100;
+    transition-duration: 300ms;
+   
+}
+
+h1{
+    font-family: "Roboto";
+    color: white;
+}
+.button-div {
+    display: flex;
+}

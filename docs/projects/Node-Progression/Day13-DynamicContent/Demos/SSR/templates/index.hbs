@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Carolina Parks - Index</title>
+  <link href='./css/base.css' rel='stylesheet' />
+  <link href='./css/home.css' rel='stylesheet' />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><a href="./">North Carolina Parks</a></h1>
+    </nav>
+  </header>
+
+  <main>
+    <div id="map"><img src="./img/ncparkmap.png"></div>
+    <section>
+      <div class="filter-options">
+        <h2>Filter Results</h2>
+        <select id="counties-select" name="countyId">
+          <option value="all">All Counties</option>
+          {{#each counties}}
+            <option value="{{id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div id="parks-list">
+        {{#each parks}}
+          <a class="park" href="./park?id={{id}}">
+            <h2>{{name}}</h2>
+            <img src="./img/park.jpg">
+            <div class="counties-list">Spans Counties:</div>
+            {{#each counties}}
+              <span class="county">{{name}}</span>
+            {{/each}}
+          </a>
+        {{/each}}
+      </div>
+    </section>
+  </main>
+  <script src="./js/home.js"></script>
+
+  <footer>
+    Copyright (c) 2017 <a href="./"><strong>NC Parks</strong></a> All Rights Reserved.
+  </footer>
+</body>
+
+</html>
