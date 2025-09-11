@@ -1,3 +1,0 @@
-set 10 "line\nbreak"
-get 10
-quit
